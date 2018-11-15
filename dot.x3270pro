@@ -1,0 +1,59 @@
+! x3270 profile
+! File created Wed Jan  1 10:36:36 2014 by x3270 v3.3.11ga6 Sat Nov  9 10:16:57 PST 2013 root
+! This file overrides xrdb and .Xdefaults.
+! To skip reading this file, set NOX3270PRO in the environment.
+!
+x3270.port:	3270
+! Use the 'mine' keymap, defined below
+x3270.keymap:	mine
+! Definition of the 'mine' keymap
+x3270.keymap.mine:	#override \
+	<Key>Prior:	PF(7)\n\
+	<Key>Next:	PF(8)\n\
+	Meta<Key>F1:	PA(1)\n\
+	Meta<Key>F2:	PA(2)\n\
+	Meta<Key>F3:	PA(3)\n\
+	<Key>F13:	PA(1)\n\
+	<Key>F14:	PA(2)\n\
+	<Key>F15:	PA(3)\n\
+	<Key>XF86Tools:	PA(1)\n\
+	<Key>XF86Launch5:	PA(2)\n\
+	<Key>XF86Launch6:	PA(3)\n\
+	Shift<Key>6:	CircumNot()\n\
+	Shift<Key>Delete:	DeleteWord()\n\
+	<Key>Delete:	Delete()\n\
+	Shift<Key>End:	EraseEOF()\n\
+	Alt<Key>Left:	PreviousWord()\n\
+	Alt<Key>Right:	NextWord()\n\
+	Shift<Key>Tab:	BackTab()\n\
+	<Key>Insert:	ToggleInsert()\n\
+	Meta<Key>Insert:	ToggleInsert()\n\
+	Alt<Key>Insert:	ToggleInsert()\n\
+	Ctrl<Key>Insert:	ToggleInsert()\n\
+	Meta<Key>Help:	ToggleInsert()\n\
+	Alt<Key>Help:	ToggleInsert()\n\
+	Ctrl<Key>Help:	ToggleInsert()\n\
+	Meta<Key>v:	insert-selection("PRIMARY")\n\
+	Meta<Key>i:	ToggleInsert()\n\
+	<Key>KP_Divide:	PA(1)\n\
+	<Key>KP_Multiply:	PA(2)\n\
+	<Key>KP_7:	PF(13)\n\
+	<Key>KP_8:	PF(14)\n\
+	<Key>KP_9:	PF(15)\n\
+	<Key>KP_4:	PF(16)\n\
+	<Key>KP_5:	PF(17)\n\
+	<Key>KP_6:	PF(18)\n\
+	<Key>KP_1:	PF(19)\n\
+	<Key>KP_2:	PF(20)\n\
+	<Key>KP_3:	PF(21)\n\
+	<Key>KP_0:	PF(22)\n\
+	<Key>KP_Decimal:	PF(23)\n\
+	<Key>KP_Enter:	PF(24)\n\
+	<Key>KP_Add:	PF(24)
+x3270.dsTrace:	false
+x3270.emulatorFont:	3270-20
+x3270.extended:	true
+x3270.keypadOn:	false
+x3270.lineWrap:	true
+x3270.scrollbar:	false
+x3270.showTiming:	false
