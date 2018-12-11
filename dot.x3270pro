@@ -4,10 +4,12 @@
 ! To skip reading this file, set NOX3270PRO in the environment.
 !
 x3270.port:	3270
-! Use the 'mine' keymap, defined below
-x3270.keymap:	mine
-! Definition of the 'mine' keymap
-x3270.keymap.mine:	#override \
+! Use the 'kendra' keymap, defined below
+x3270.keymap:	kendra
+! Definition of the 'kendra' keymap
+x3270.keymap.kendra:	#override \
+	Shift<Key>Prior:	PF(19)\n\
+	Shift<Key>Next:	PF(20)\n\
 	<Key>Prior:	PF(7)\n\
 	<Key>Next:	PF(8)\n\
 	Meta<Key>F1:	PA(1)\n\
@@ -23,6 +25,7 @@ x3270.keymap.mine:	#override \
 	Shift<Key>Delete:	DeleteWord()\n\
 	<Key>Delete:	Delete()\n\
 	Shift<Key>End:	EraseEOF()\n\
+	<Key>End:	FieldEnd()\n\
 	Alt<Key>Left:	PreviousWord()\n\
 	Alt<Key>Right:	NextWord()\n\
 	Shift<Key>Tab:	BackTab()\n\
