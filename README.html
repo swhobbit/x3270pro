@@ -1,0 +1,298 @@
+<h1 id="read-me-file-for-x3270_keys-repository">Read me file for x3270_keys Repository</h1>
+<h2 id="overview">Overview</h2>
+<p>This repository exists to provide an example of key mapping for x3270 as used by the author (<a href="mailto:swhobbit@derbyshire.us">swhobbit@derbyshire.us</a>) to access VM.</p>
+<h2 id="getting-x3270">Getting x3270</h2>
+<h3 id="macos">MacOS</h3>
+<ol>
+<li>Install <a href="https://www.xquartz.org/">https://www.xquartz.org/</a></li>
+<li>Install xcode: <a href="https://developer.apple.com/xcode/downloads/">https://developer.apple.com/xcode/downloads/</a></li>
+<li><p>Install MacPorts: <a href="https://www.macports.org/">https://www.macports.org/</a></p>
+</li>
+<li><p>Install packages:</p>
+<ul>
+<li><code>port install x3270</code></li>
+<li><code>port install c3270</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="linux-ubuntu-">Linux (ubuntu)</h3>
+<p>apt-get install</p>
+<ul>
+<li><code>3270-common</code></li>
+<li><em><code>c3270</code></em></li>
+<li><code>fonts-3270</code></li>
+<li><em><code>pr3287</code></em></li>
+<li><em><code>s3270</code></em></li>
+<li><code>x3270</code></li>
+<li><code>x3270-doc</code></li>
+<li><code>xfonts-x3270-misc</code></li>
+</ul>
+<p><strong>Note:</strong> <em>Italicized</em> items are optional.</p>
+<h3 id="windows">Windows</h3>
+<p><strong><em>NOTE</em></strong>: If running Windows 10 and it is otherwise possible, use the Windows Subsystem for Linux to run the <code>x3270</code> version.  The Windows version is a console application, and more limited in functionality.</p>
+<p>If you must run the console download from <a href="http://x3270.bgp.nu/download.html">http://x3270.bgp.nu/download.html</a> and install:</p>
+<ul>
+<li><code>wc3270</code></li>
+</ul>
+<h2 id="the-profile">The Profile</h2>
+<p>The profile adds, tweaks, and in some cases out-and-out corrects various items in default setup for x3270 keys.  Below is the primary layout by the author with alternatives.</p>
+<h3 id="program-attention-keys-pak-">Program Attention Keys (PAK)</h3>
+<p>These keys all generate an interrupt to the host.</p>
+<table>
+<thead>
+<tr>
+<th>3270 Key</th>
+<th>Emulator Key</th>
+<th>Emulator Alternatives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enter</code></td>
+<td>Return</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Clear</code></td>
+<td>Alt-C</td>
+<td>Meta-C</td>
+</tr>
+<tr>
+<td><code>Attn</code></td>
+<td>Alt-A</td>
+<td>Meta-A</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>PA1</code></td>
+<td>F13</td>
+<td>Meta-F1 Keypad-Divide (aka keypad &quot;/&quot;)</td>
+</tr>
+<tr>
+<td><code>PA2</code></td>
+<td>F14</td>
+<td>Meta-F2 Keypad-Multipy (aka keypad &quot;*&quot;)</td>
+</tr>
+<tr>
+<td><code>PA3</code></td>
+<td>F13</td>
+<td>Meta-F3</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF1</code></td>
+<td>F1</td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF2</code></td>
+<td>F2</td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF3</code></td>
+<td>F3</td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF4</code></td>
+<td>F4</td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF5</code></td>
+<td>F5</td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF6</code></td>
+<td>F6</td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF7</code></td>
+<td>F7</td>
+<td>Page Up</td>
+</tr>
+<tr>
+<td><code>PF8</code></td>
+<td>F8</td>
+<td>Page Down</td>
+</tr>
+<tr>
+<td><code>PF9</code></td>
+<td>F9</td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF10</code></td>
+<td>F10</td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF11</code></td>
+<td>F11</td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF12</code></td>
+<td>F12</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>PF13</code></td>
+<td>Shift-F1</td>
+<td>Keypad-7</td>
+</tr>
+<tr>
+<td><code>PF14</code></td>
+<td>Shift-F2</td>
+<td>Keypad-8</td>
+</tr>
+<tr>
+<td><code>PF15</code></td>
+<td>Shift-F3</td>
+<td>Keypad-9</td>
+</tr>
+<tr>
+<td><code>PF16</code></td>
+<td>Shift-F4</td>
+<td>Keypad-4</td>
+</tr>
+<tr>
+<td><code>PF17</code></td>
+<td>Shift-F5</td>
+<td>Keypad-5</td>
+</tr>
+<tr>
+<td><code>PF18</code></td>
+<td>Shift-F6</td>
+<td>Keypad-6</td>
+</tr>
+<tr>
+<td><code>PF19</code></td>
+<td>Shift-F7</td>
+<td>Keypad-1</td>
+</tr>
+<tr>
+<td><code>PF20</code></td>
+<td>Shift-F8</td>
+<td>Keypad-2</td>
+</tr>
+<tr>
+<td><code>PF21</code></td>
+<td>Shift-F9</td>
+<td>Keypad-3</td>
+</tr>
+<tr>
+<td><code>PF22</code></td>
+<td>Shift-F10</td>
+<td>Keypad-0</td>
+</tr>
+<tr>
+<td><code>PF23</code></td>
+<td>Shift-F11</td>
+<td>Keypad-Decimal (AKA keypad &quot;<code>.</code>&quot;)</td>
+</tr>
+<tr>
+<td><code>PF24</code></td>
+<td>Shift-F12</td>
+<td>Keypad-Enter, Keypad-Plus (AKA keypad &quot;<code>+</code>&quot;)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-3270-special-keys">Other 3270 Special Keys</h3>
+<table>
+<thead>
+<tr>
+<th>3270 Key</th>
+<th>Emulator Key</th>
+<th>Emulator Alternatives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Insert</code></td>
+<td>Insert</td>
+<td>Alt-Help, Meta-Help, Ctrl-Help</td>
+</tr>
+<tr>
+<td><code>Erase EOF</code></td>
+<td>Shift-End</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Delete</code></td>
+<td>Delete (<em>not</em> Backspace)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Reset</code></td>
+<td>Meta-R</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Newline</code></td>
+<td>Shift-Return</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> When in an unprotected field, <code>Erase EOF</code> erases from the cursor  to the end of the field)</p>
+<h3 id="other-important-keys">Other Important keys</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Emulator Key</th>
+<th>Emulator Alternatives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client Paste</td>
+<td>Meta-V</td>
+<td>Shift-Insert, Mouse Button 2 (middle)</td>
+</tr>
+<tr>
+<td>Delete Word</td>
+<td>Shift-Delete</td>
+<td></td>
+</tr>
+<tr>
+<td>Delete Field</td>
+<td>Control-U</td>
+<td></td>
+</tr>
+<tr>
+<td>Word Right</td>
+<td>Meta-Right Arrow</td>
+<td>Alt-Right Arrow</td>
+</tr>
+<tr>
+<td>Word Left</td>
+<td>Meta-Left Arrow</td>
+<td>Alt-Left Arrow</td>
+</tr>
+<tr>
+<td>Logical Not (¬)</td>
+<td>Caret (Shift-6, AKA &quot;<code>^</code>&quot;)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: A Mac has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270, hence the modifier key alternatives.</p>
+<p><strong>Note</strong>: The <code>Insert</code> function actually toggles insert mode on/off, the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off.</p>
+<p><strong>Note</strong>: <code>Delete</code> deletes the character under the cursor.  It is <em>not</em> a backspace which deletes to left.</p>
+<p><strong>Note</strong>: <code>Delete Word</code> deletes to the <em>left</em>.  Attempts to housebreak it and have it delete to the right have failed</p>
