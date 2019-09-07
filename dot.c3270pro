@@ -1,3 +1,4 @@
+! vim: ts=8 noexpandtab
 ! Definition of the 'kendra' keymap
 c3270.keymap.kendra: \
 	<Key>^:	Key(notsign)\n\
@@ -21,6 +22,9 @@ c3270.keymap.kendra: \
 	Alt<Key>i:	ToggleInsert()\n\
 	Alt<Key>v:	insert-selection("PRIMARY")\n\
 	Alt<Key>x:	Cut("CLIPBOARD")\n\
+	Ctrl<Key>d:	Disconnect()\n\
+	Alt<Key>d:	Disconnect()\n\
+	Alt<Key>q:	Disconnect()\n\
 	Ctrl<Key>q <Key>1: PA(1)\n\
 	Ctrl<Key>q <Key>2: PA(2)\n\
 	Ctrl<Key>q <Key>3: PA(3)\n\
@@ -36,7 +40,6 @@ c3270.cursesColorForHostColorBlue: cyan
 c3270.port: 3270
 c3270.mono: false
 
-! Use the 'kendra' keymap, defined below
+! Use the 'kendra' keymap, defined above
 c3270.keymap: kendra
-
 
