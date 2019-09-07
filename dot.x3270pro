@@ -3,7 +3,6 @@
 ! This file overrides xrdb and .Xdefaults.
 ! To skip reading this file, set NOX3270PRO in the environment.
 !
-x3270.port:	3270
 ! Use the 'kendra' keymap, defined below
 x3270.keymap:	kendra
 ! Definition of the 'kendra' keymap
@@ -37,6 +36,7 @@ x3270.keymap.kendra:	#override \
 	Alt<Key>Help:	ToggleInsert()\n\
 	Ctrl<Key>Help:	ToggleInsert()\n\
 	Meta<Key>v:	insert-selection("PRIMARY")\n\
+	Meta<Key>x:	Cut("CLIPBOARD")\n\
 	Meta<Key>i:	ToggleInsert()\n\
 	<Key>KP_Divide:	PA(1)\n\
 	<Key>KP_Multiply:	PA(2)\n\
