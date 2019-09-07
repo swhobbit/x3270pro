@@ -10,11 +10,10 @@ This repository exists to provide an example of key mapping for x3270 as used by
 
 1. Install https://www.xquartz.org/
 1. Install xcode: https://developer.apple.com/xcode/downloads/
-2. Install MacPorts: https://www.macports.org/
-
-3. Install packages:
-   * `port install x3270`
-   * `port install c3270`
+1. Install MacPorts: https://www.macports.org/
+1. Install packages:
+   * `sudo port install x3270`
+   * `sudo port install c3270`
 
 ### Linux (ubuntu)
 
@@ -37,9 +36,11 @@ __Note:__ _Italicized_ items are optional.
 If you must run the console download from http://x3270.bgp.nu/download.html and install:
 * `wc3270`
 
-## The Profile
+## X windows (x3270 on various platforms)
 
-The profile adds, tweaks, and in some cases out-and-out corrects various items in default setup for x3270 keys.  Below is the primary layout by the author with alternatives.
+### Profile overview
+
+The profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup for x3270 keys.  Below is the primary layout by the author with alternatives.
 
 ### Program Attention Keys (PAK)
 
@@ -109,3 +110,9 @@ These keys all generate an interrupt to the host.
 **Note**: `Delete` deletes the character under the cursor.  It is *not* a backspace which deletes to left.
 
 **Note**: `Delete Word` deletes to the *left*.  Attempts to housebreak it and have it delete to the right have failed
+
+## Using Windows (c3270)
+
+### Profile Overview
+
+In a manner similar to the X windows profile, the c3270 profile weaks, and in some cases out-and-out corrects various items in the default setup for c3270 keys.  For example, it adds an insert toggle.  It is not extensive or as tested as the X Windows profile -- the author follows his own advice and uses the X windows version whenever possible.

@@ -6,12 +6,10 @@
 <ol>
 <li>Install <a href="https://www.xquartz.org/">https://www.xquartz.org/</a></li>
 <li>Install xcode: <a href="https://developer.apple.com/xcode/downloads/">https://developer.apple.com/xcode/downloads/</a></li>
-<li><p>Install MacPorts: <a href="https://www.macports.org/">https://www.macports.org/</a></p>
-</li>
-<li><p>Install packages:</p>
-<ul>
-<li><code>port install x3270</code></li>
-<li><code>port install c3270</code></li>
+<li>Install MacPorts: <a href="https://www.macports.org/">https://www.macports.org/</a></li>
+<li>Install packages:<ul>
+<li><code>sudo port install x3270</code></li>
+<li><code>sudo port install c3270</code></li>
 </ul>
 </li>
 </ol>
@@ -34,8 +32,9 @@
 <ul>
 <li><code>wc3270</code></li>
 </ul>
-<h2 id="the-profile">The Profile</h2>
-<p>The profile adds, tweaks, and in some cases out-and-out corrects various items in default setup for x3270 keys.  Below is the primary layout by the author with alternatives.</p>
+<h2 id="x-windows-x3270-on-various-platforms-">X windows (x3270 on various platforms)</h2>
+<h3 id="profile-overview">Profile overview</h3>
+<p>The profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup for x3270 keys.  Below is the primary layout by the author with alternatives.</p>
 <h3 id="program-attention-keys-pak-">Program Attention Keys (PAK)</h3>
 <p>These keys all generate an interrupt to the host.</p>
 <table>
@@ -296,3 +295,6 @@
 <p><strong>Note</strong>: The <code>Insert</code> function actually toggles insert mode on/off, the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off.</p>
 <p><strong>Note</strong>: <code>Delete</code> deletes the character under the cursor.  It is <em>not</em> a backspace which deletes to left.</p>
 <p><strong>Note</strong>: <code>Delete Word</code> deletes to the <em>left</em>.  Attempts to housebreak it and have it delete to the right have failed</p>
+<h2 id="using-windows-c3270-">Using Windows (c3270)</h2>
+<h3 id="profile-overview">Profile Overview</h3>
+<p>In a manner similar to the X windows profile, the c3270 profile weaks, and in some cases out-and-out corrects various items in the default setup for c3270 keys.  For example, it adds an insert toggle.  It is not extensive or as tested as the X Windows profile -- the author follows his own advice and uses the X windows version whenever possible.</p>
