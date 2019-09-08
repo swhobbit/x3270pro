@@ -1,6 +1,6 @@
-<h1 id="read-me-file-for-x3270_keys-repository">Read me file for x3270_keys Repository</h1>
+<h1 id="dot-x3270pro-x3270pro-keymap-for-x3270-readme">dot.x3270pro (<code>.x3270pro</code>) keymap for <code>x3270</code> README</h1>
 <h2 id="overview">Overview</h2>
-<p>This repository exists to provide an example of key mapping for <code>x3270</code> and <code>c3270</code> as used by the author (<a href="mailto:swhobbit@derbyshire.us">swhobbit@derbyshire.us</a>) to access VM.</p>
+<p><a href="dot.x3270pro"><code>dot.x3270pro</code></a> configures key mapping for <code>x3270</code> as used by the author (<a href="mailto:swhobbit@derbyshire.us">swhobbit@derbyshire.us</a>) to access VM. To use, it should be saved in your home directory as <code>.x3270pro</code>.</p>
 <h3 id="terminal-sizes">Terminal Sizes</h3>
 <p>The standard terminal sizes for 3270 emulation are:</p>
 <table>
@@ -34,40 +34,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getting-x3270">Getting x3270</h2>
-<h3 id="macos">MacOS</h3>
-<ol>
-<li>Install <a href="https://www.xquartz.org/">https://www.xquartz.org/</a></li>
-<li>Install xcode: <a href="https://developer.apple.com/xcode/downloads/">https://developer.apple.com/xcode/downloads/</a></li>
-<li>Install MacPorts: <a href="https://www.macports.org/">https://www.macports.org/</a></li>
-<li>Install packages:<ul>
-<li><code>sudo port install x3270</code></li>
-<li><code>sudo port install c3270</code></li>
-</ul>
-</li>
-</ol>
-<h3 id="linux-ubuntu-">Linux (ubuntu)</h3>
-<p>apt-get install -y</p>
-<ul>
-<li><code>3270-common</code></li>
-<li><em><code>c3270</code></em></li>
-<li><code>fonts-3270</code></li>
-<li><em><code>pr3287</code></em></li>
-<li><em><code>s3270</code></em></li>
-<li><code>x3270</code></li>
-<li><code>x3270-doc</code></li>
-<li><code>xfonts-x3270-misc</code></li>
-</ul>
-<p><strong>Note:</strong> <em>Italicized</em> items are optional.</p>
-<h3 id="windows">Windows</h3>
-<p><strong><em>NOTE</em></strong>: If running Windows 10 and it is otherwise possible, use the Windows Subsystem for Linux to run the <code>x3270</code> version.  The Windows version is a console application, and more limited in functionality.</p>
-<p>If you must run from a console Window, download from <a href="http://x3270.bgp.nu/download.html">http://x3270.bgp.nu/download.html</a> and install:</p>
-<ul>
-<li><code>wc3270</code></li>
-</ul>
-<h2 id="x-windows-x3270-on-various-platforms-">X windows (x3270 on various platforms)</h2>
-<h3 id="profile-overview">Profile overview</h3>
-<p>The profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup for x3270 keys.  Below is the primary layout by the author with alternatives.</p>
+<h2 id="installing-x3270">Installing x3270</h2>
+<p>See <a href="README#get-3270">README</a></p>
+<h2 id="profile-overview">Profile overview</h2>
+<p>The profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup for x3270 keys. Below is the primary layout by the author with alternatives.</p>
 <h3 id="program-attention-keys-pak-">Program Attention Keys (PAK)</h3>
 <p>These keys all generate an interrupt to the host.</p>
 <table>
@@ -174,99 +144,66 @@
 <td><code>PF13</code></td>
 <td>Shift-F1</td>
 <td>Keypad-7</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF14</code></td>
 <td>Shift-F2</td>
 <td>Keypad-8</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF15</code></td>
 <td>Shift-F3</td>
 <td>Keypad-9</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF16</code></td>
 <td>Shift-F4</td>
 <td>Keypad-4</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF17</code></td>
 <td>Shift-F5</td>
 <td>Keypad-5</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF18</code></td>
 <td>Shift-F6</td>
 <td>Keypad-6</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF19</code></td>
 <td>Shift-F7</td>
 <td>Keypad-1</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF20</code></td>
 <td>Shift-F8</td>
 <td>Keypad-2</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF21</code></td>
 <td>Shift-F9</td>
 <td>Keypad-3</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF22</code></td>
 <td>Shift-F10</td>
 <td>Keypad-0</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF23</code></td>
 <td>Shift-F11</td>
 <td>Keypad-Decimal (AKA keypad &quot;<code>.</code>&quot;)</td>
-<td><em>x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PF24</code></td>
 <td>Shift-F12</td>
 <td>Keypad-Enter, Keypad-Plus (AKA keypad &quot;<code>+</code>&quot;)</td>
-<td><em>x3270 only</em></td>
 </tr>
 </tbody>
 </table>
 <hr>
-<p><strong><em>Note</em></strong>: Keys noted <strong>x3270 only</strong> are not supported by <code>c3270</code>.</p>
-<p><strong>Note</strong>: Especially in <code>c3270</code>, various keys are reserved by the operating system.  For example on MacOS Meta-I is intercepted by the <code>Terminal</code> to put up an Info box.</p>
-<h3 id="other-3270-special-keys">Other 3270 Special Keys</h3>
-<table>
-<thead>
-<tr>
-<th>3270 Key</th>
-<th>Emulator Key</th>
-<th>Emulator Alternatives</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Disconnect &amp; Exit</strong></td>
-<td>Alt-W</td>
-<td><em>c3270 only</em> also supports: Alt-Q, Ctrl-D, Alt-D</td>
-<td>You may also simply close the Window <em>after</em> logging out.</td>
-</tr>
-</tbody>
-</table>
-<hr>
+<h2 id="note-various-keys-are-reserved-by-the-operating-system-for-example-on-macos-plain-help-insert-is-intercepted-"><strong>Note</strong>: Various keys are reserved by the operating system.  For example on MacOS plain <code>Help</code> (Insert) is intercepted.</h2>
 <h3 id="important-client-keys">Important Client keys</h3>
 <table>
 <thead>

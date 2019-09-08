@@ -1,23 +1,28 @@
-# Read me file for dot.c3270pro (`.c3270pro`)
+# dot.c3270pro (`.c3270pro`) keymap for `c3270` README
 
 ## Overview
 
-The [dot.c3270pro](dot.c3270pro) file should be saved in your home directory on a on UNIX or MacOS system for key mapping for `c3270` and `c3270`. This file is as used by the author (swhobbit@derbyshire.us) to access VM when `x3270` is not appropriate, for example for a long running terminal for a system console via the program `screen`.
+[`dot.c3270pro`](dot.c3270pro) configures key mapping for `c3270` as used by the author (swhobbit@derbyshire.us) to access VM. To use, it should be saved in your home directory as `.c3270pro`.
 
-## Using c3270.sh to set the `c3270` emulator window size.
+**Note:** When available, `x3270` gives a better user experience than `c3270`.  `c3270` is useful when `x3270` is not appropriate, for example using for a long running system console under the program `screen`.
 
-Once opened in a terminal window, the `c3270` emulator size is fixed. This is less of issue with `x3270` because it will always generate an emulator window appropriate for the model of 3270 requested.  However, `c3270` does not check the terminal window size and automatically adjust to the best screen size for the client window.
+## `c3270.sh` Wrapper
 
-The wrapper script [`c3270.sh`](c3270.sh) *does* check the terminal size and uses the largest model possible for the window.
+Once opened in a terminal window, the `c3270` emulator size is both arbitrary and fixed; if wrong (too large), it cannot be changed without restarting the program. The fixed size is less of issue with `x3270` because it _does__ check the screen and generate a new window that fits. However, `c3270` does not check the terminal window size and simply generates a default terminal size (by default, 43 lines).
+
+The wrapper script [`c3270.sh`](c3270.sh) checks the terminal size and invokes `c3270` with the largest 3270 model size appropriate for the window.
 
 **Note**: When the terminal window is at least 132 columns, `c3270.sh` will favor emulating a [3270 model 5](Readme#Terminal-Sizes) over a taller but narrower terminal.
 
 ***Note***: When using `c3270`, make the terminal window two lines _higher_ than the desired the 3270 terminal size _before_ running the program. This allows room for the top & bottom lines of chrome.
 
-
 ## Profile overview
 
-The profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup for x3270 keys.  Below is the primary layout by the author with alternatives.
+The `dot.c3270pro` profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup.  Below is the primary layout by the author with alternatives.
+
+**Note**: Various keys combinations are reserved by the operating system.  For example on MacOS Meta-I is intercepted by the `Terminal` to put up an Info box.
+
+**Note:** No shifted keys combinations are available under `c3270`.
 
 ### Special Emulator Keys
 | 3270 Key	| Emulator Key	| Emulator Alternatives	| Notes	|
@@ -53,8 +58,6 @@ These keys all generate an interrupt to the host.
 | `PF11`	| F11	|
 | `PF12`	| F12	|
 ---
-
-**Note**: Especially in `c3270`, various keys are reserved by the operating system.  For example on MacOS Meta-I is intercepted by the `Terminal` to put up an Info box.
 
 ### Important Client keys
 

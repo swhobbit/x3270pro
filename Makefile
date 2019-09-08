@@ -6,10 +6,10 @@ all:  \
 	dot.x3270pro  \
 	README.html \
 	dot.c3270pro.html  \
-	dot.x3270pro.html  
+	dot.x3270pro.html
 
 %.html: %.md
-	marked --output $@ $^
+	sed -e 's/\.md/\.html/' $^ | marked --output $@
 
 dot%: ${HOME}/%
 	cp -p $^ $@
