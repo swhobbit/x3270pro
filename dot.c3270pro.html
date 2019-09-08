@@ -1,0 +1,208 @@
+<h1 id="read-me-file-for-dot-c3270pro-c3270pro-">Read me file for dot.c3270pro (<code>.c3270pro</code>)</h1>
+<h2 id="overview">Overview</h2>
+<p>The <a href="dot.c3270pro">dot.c3270pro</a> file should be saved in your home directory on a on UNIX or MacOS system for key mapping for <code>c3270</code> and <code>c3270</code>. This file is as used by the author (<a href="mailto:swhobbit@derbyshire.us">swhobbit@derbyshire.us</a>) to access VM when <code>x3270</code> is not appropriate, for example for a long running terminal for a system console via the program <code>screen</code>.</p>
+<h2 id="using-c3270-sh-to-set-the-c3270-emulator-window-size-">Using c3270.sh to set the <code>c3270</code> emulator window size.</h2>
+<p>Once opened in a terminal window, the <code>c3270</code> emulator size is fixed. This is less of issue with <code>x3270</code> because it will always generate an emulator window appropriate for the model of 3270 requested.  However, <code>c3270</code> does not check the terminal window size and automatically adjust to the best screen size for the client window.</p>
+<p>The wrapper script <a href="c3270.sh"><code>c3270.sh</code></a> <em>does</em> check the terminal size and uses the largest model possible for the window.</p>
+<p><strong>Note</strong>: When the terminal window is at least 132 columns, <code>c3270.sh</code> will favor emulating a <a href="Readme#Terminal-Sizes">3270 model 5</a> over a taller but narrower terminal.</p>
+<p><strong><em>Note</em></strong>: When using <code>c3270</code>, make the terminal window two lines <em>higher</em> than the desired the 3270 terminal size <em>before</em> running the program. This allows room for the top &amp; bottom lines of chrome.</p>
+<h2 id="profile-overview">Profile overview</h2>
+<p>The profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup for x3270 keys.  Below is the primary layout by the author with alternatives.</p>
+<h3 id="special-emulator-keys">Special Emulator Keys</h3>
+<table>
+<thead>
+<tr>
+<th>3270 Key</th>
+<th>Emulator Key</th>
+<th>Emulator Alternatives</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Disconnect &amp; Exit</strong></td>
+<td>Alt-W</td>
+<td>Alt-Q, Ctrl-D, Alt-D</td>
+<td>Logout before using this function!</td>
+</tr>
+<tr>
+<td><strong>Pop-up Keypad</strong></td>
+<td>Ctrl-K</td>
+<td></td>
+<td>Displays a keypad of with <code>PAn</code> &amp; <code>PFn</code> keys, <code>Reset</code>, <code>Insert</code>, <code>Attn</code>, <code>Clear</code> and virtually all other 3270 specific keys.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="program-attention-keys-pak-">Program Attention Keys (PAK)</h2>
+<p>These keys all generate an interrupt to the host.</p>
+<table>
+<thead>
+<tr>
+<th>3270 Key</th>
+<th>Emulator Key</th>
+<th>Emulator Alternatives</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enter</code></td>
+<td><code>Enter</code></td>
+</tr>
+<tr>
+<td><code>Clear</code></td>
+<td>Alt-C</td>
+</tr>
+<tr>
+<td><code>Attn</code></td>
+<td>Alt-A</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><code>PA1</code></td>
+<td>F13 (aka <code>Print Screen</code>)</td>
+<td>Alt-1</td>
+</tr>
+<tr>
+<td><code>PA2</code></td>
+<td>F14 (aka <code>Scroll Lock</code>)</td>
+<td>Alt-2</td>
+<td>PA2 clears the screen on the virtual console when not in full screen mode (such as the editor).</td>
+</tr>
+<tr>
+<td><code>PA3</code></td>
+<td>F13 (aka <code>Pause</code>)</td>
+<td>Alt-3</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><code>PF1</code></td>
+<td>F1</td>
+</tr>
+<tr>
+<td><code>PF2</code></td>
+<td>F2</td>
+</tr>
+<tr>
+<td><code>PF3</code></td>
+<td>F3</td>
+</tr>
+<tr>
+<td><code>PF4</code></td>
+<td>F4</td>
+</tr>
+<tr>
+<td><code>PF5</code></td>
+<td>F5</td>
+</tr>
+<tr>
+<td><code>PF6</code></td>
+<td>F6</td>
+</tr>
+<tr>
+<td><code>PF7</code></td>
+<td>F7</td>
+<td>Page Up</td>
+</tr>
+<tr>
+<td><code>PF8</code></td>
+<td>F8</td>
+<td>Page Down</td>
+</tr>
+<tr>
+<td><code>PF9</code></td>
+<td>F9</td>
+</tr>
+<tr>
+<td><code>PF10</code></td>
+<td>F10</td>
+</tr>
+<tr>
+<td><code>PF11</code></td>
+<td>F11</td>
+</tr>
+<tr>
+<td><code>PF12</code></td>
+<td>F12</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Note</strong>: Especially in <code>c3270</code>, various keys are reserved by the operating system.  For example on MacOS Meta-I is intercepted by the <code>Terminal</code> to put up an Info box.</p>
+<h3 id="important-client-keys">Important Client keys</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Emulator Key</th>
+<th>Emulator Alternatives</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Logical Not (¬)</code></td>
+<td>Caret (Shift-6, AKA &quot;<code>^</code>&quot;)</td>
+</tr>
+<tr>
+<td><code>Insert</code></td>
+<td>Insert</td>
+<td>Alt-Help, Ctrl-Help</td>
+<td>MacOS has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270, hence the modifier keys. The <code>Insert</code> function actually toggles insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off. alternatives are provided.</td>
+</tr>
+<tr>
+<td><code>Client Paste</code></td>
+<td>Alt-V</td>
+<td>Shift-Insert, Mouse Button 2 (middle)</td>
+</tr>
+<tr>
+<td><code>Delete Word</code></td>
+<td>Shift-Delete</td>
+<td><code>Delete Word</code> deletes to the <em>left</em>.  Attempts to housebreak it and have it delete to the right have failed</td>
+</tr>
+<tr>
+<td><code>Delete Field</code></td>
+<td>Control-U</td>
+</tr>
+<tr>
+<td><code>Word Right</code></td>
+<td>Alt-Right Arrow</td>
+<td>Alt-Right Arrow</td>
+</tr>
+<tr>
+<td><code>Word Left</code></td>
+<td>Alt-Left Arrow</td>
+<td>Alt-Left Arrow</td>
+</tr>
+<tr>
+<td><code>Erase EOF</code></td>
+<td></td>
+<td></td>
+<td>Pop up key pad only. When in an unprotected field, <code>Erase EOF</code> erases from the cursor to the end of the field)</td>
+</tr>
+<tr>
+<td><code>Delete</code></td>
+<td>Delete</td>
+<td></td>
+<td><code>Delete</code> deletes the character under the cursor.  It is <em>not</em> a backspace which deletes to left.</td>
+</tr>
+<tr>
+<td><code>Reset</code></td>
+<td>Alt-R</td>
+<td>Ctrl-R</td>
+</tr>
+<tr>
+<td><code>Newline</code></td>
+<td></td>
+<td></td>
+<td>Pop-up Keypad</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Note</strong>: The mouse is not supported in all environments.</p>

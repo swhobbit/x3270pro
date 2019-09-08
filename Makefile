@@ -1,10 +1,21 @@
+# vim: expandtab ts=8
+
+all:  \
+	c3270.sh  \
+	dot.c3270pro  \
+	dot.x3270pro  \
+	README.html \
+	dot.c3270pro.html  \
+	dot.x3270pro.html  
+
 %.html: %.md
 	marked --output $@ $^
 
 dot%: ${HOME}/%
 	cp -p $^ $@
 
-all: README.html dot.x3270pro dot.c3270pro
+%.sh: ${HOME}/bin/%.sh
+	cp -p $^ $@
 
 clean:
 	- rm README.html

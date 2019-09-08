@@ -1,16 +1,17 @@
-! vim: ts=8 noexpandtab
+! vim:	ts=8 noexpandtab
+
 ! Definition of the 'kendra' keymap
-c3270.keymap.kendra: \
+c3270.keymap.kendra:	\
 	<Key>^:	Key(notsign)\n\
-	<Key>F13: PA(1)\n\
-	<Key>F14: PA(2)\n\
-	<Key>F15: PA(3)\n\
-	<Key>NPAGE: PF(8)\n\
-	<Key>PPAGE: PF(7)\n\
-	<Key>U+007F: Erase\n\
-	Alt<Key>[ <Key>2 <Key>5 <Key>~: PA(1)\n\
-	Alt<Key>[ <Key>2 <Key>6 <Key>~: PA(2)\n\
-	Alt<Key>[ <Key>2 <Key>8 <Key>~: PA(3)\n\
+	<Key>F13:	PA(1)\n\
+	<Key>F14:	PA(2)\n\
+	<Key>F15:	PA(3)\n\
+	<Key>PPAGE:	PF(7)\n\
+	<Key>NPAGE:	PF(8)\n\
+	<Key>U+007F:	Erase\n\
+	Alt<Key>[ <Key>2 <Key>5 <Key>~:	PA(1)\n\
+	Alt<Key>[ <Key>2 <Key>6 <Key>~:	PA(2)\n\
+	Alt<Key>[ <Key>2 <Key>8 <Key>~:	PA(3)\n\
 	Alt<Key>+:	EraseEOF()\n\
 	Alt<Key>(:	Deleteword()\n\
 	Alt<Key>1:	PA(1)\n\
@@ -18,28 +19,29 @@ c3270.keymap.kendra: \
 	Alt<Key>3:	PA(3)\n\
 	Alt<Key>b:	PreviousWord()\n\
 	Alt<Key>f:	NextWord()\n\
-	Alt<Key>F:	ToggleInsert()\n\
 	Alt<Key>i:	ToggleInsert()\n\
 	Alt<Key>v:	insert-selection("PRIMARY")\n\
 	Alt<Key>x:	Cut("CLIPBOARD")\n\
-	Ctrl<Key>d:	Disconnect()\n\
+	Alt<Key>c:	Clear()\n\
+	Alt<Key>a:	Attn()\n\
+	Alt<Key>w:	Disconnect()\n\
 	Alt<Key>d:	Disconnect()\n\
 	Alt<Key>q:	Disconnect()\n\
-	Ctrl<Key>q <Key>1: PA(1)\n\
-	Ctrl<Key>q <Key>2: PA(2)\n\
-	Ctrl<Key>q <Key>3: PA(3)\n\
+	Ctrl<Key>d:	Disconnect()\n\
+	Ctrl<Key>b:	PreviousWord()\n\
+	Ctrl<Key>f:	NextWord()\n\
+	Alt<Key>i:	ToggleInsert()\n\
+	Ctrl<Key>q <Key>1:	PA(1)\n\
+	Ctrl<Key>q <Key>2:	PA(2)\n\
+	Ctrl<Key>q <Key>3:	PA(3)\n\
 	Ctrl<Key>v:	insert-selection("PRIMARY")\n\
 	Ctrl<Key>x:	Cut("CLIPBOARD")\n\
-	<Key>BTAB: BackTab()
+	<Key>BTAB:	BackTab()
 
 c3270.cursesColorForDefault:	green
 c3270.cursesColorForIntensified:	magenta
 c3270.cursesColorForProtected:	cyan
 c3270.cursesColorForProtectedIntensified:	white
-c3270.cursesColorForHostColorBlue: cyan
-c3270.port: 3270
-c3270.mono: false
 
 ! Use the 'kendra' keymap, defined above
-c3270.keymap: kendra
-
+c3270.keymap:	kendra
