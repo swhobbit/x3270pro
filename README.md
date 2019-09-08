@@ -4,6 +4,8 @@
 
 This repository exists to provide an example of key mapping for `x3270` and `c3270` as used by the author (andrew.h@derbyshire.us) to access VM.
 
+***Note:*** Do not use `tn3270`.  It is older and does not handle all data streams from modern IBM mainframes properly.
+
 ### Terminal Sizes
 
 The standard terminal sizes for 3270 emulation are:
@@ -50,7 +52,7 @@ __Note:__ _Italicized_ items are optional.
 
 #### `c3270`
 
-As of this writing, `c3270` is not available as a NetBSD port, and must be build by hand.
+As of this writing, `c3270` is not available as a NetBSD port, and must be built by hand.
 
 1. Configure the Package system:
 1. Install `gmake`:
@@ -66,10 +68,12 @@ As of this writing, `c3270` is not available as a NetBSD port, and must be build
  1. Using `su` or `sudo`:
     * `gmake install install.man`
 
-### Installing `wc3270` on Windows Windows
+### Installing `wc3270` on Windows
 
 If you must run from a console Window, download from http://x3270.bgp.nu/download.html and install:
 * `wc3270`
+
+***NOTE***: If running Windows 10 and it is otherwise possible, use the Windows Subsystem for Linux to install and run the `x3270` version.  The native Windows version is a console application, and more limited in functionality.
 
 ## Using Under X Windows (via `x3270`)
 
@@ -79,8 +83,6 @@ See the [dot.x3270pro documentation](dot.x3270pro.md) file.
 
 See the [dot.c3270pro documentation](dot.c3270pro.md) file.
 
-## Using on a Windows (via `wc3270`)
-
-***NOTE***: If running Windows 10 and it is otherwise possible, use the Windows Subsystem for Linux to install and run the `x3270` version.  The Windows version is a console application, and more limited in functionality.
+## Using on a Windows (via `wc3270`)\
 
 This section to _To Be Determined_.
