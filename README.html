@@ -1,6 +1,6 @@
-<h1 id="read-me-file-for-x3270_keys-repository">Read me file for x3270_keys Repository</h1>
+<h1 id="read-me-file-for-x3270-repository">Read me file for x3270 repository</h1>
 <h2 id="overview">Overview</h2>
-<p>This repository exists to provide an example of key mapping for <code>x3270</code> and <code>c3270</code> as used by the author (<a href="mailto:swhobbit@derbyshire.us">swhobbit@derbyshire.us</a>) to access VM.</p>
+<p>This repository exists to provide an example of key mapping for <code>x3270</code> and <code>c3270</code> as used by the author (<a href="mailto:andrew.h@derbyshire.us">andrew.h@derbyshire.us</a>) to access VM.</p>
 <h3 id="terminal-sizes">Terminal Sizes</h3>
 <p>The standard terminal sizes for 3270 emulation are:</p>
 <table>
@@ -34,20 +34,20 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getting-x3270">Getting x3270</h2>
+<h2 id="installing-x3270">Installing x3270</h2>
 <h3 id="macos">MacOS</h3>
 <ol>
-<li>Install <a href="https://www.xquartz.org/">https://www.xquartz.org/</a></li>
+<li>Install XQuartz <a href="https://www.xquartz.org/">https://www.xquartz.org/</a></li>
 <li>Install xcode: <a href="https://developer.apple.com/xcode/downloads/">https://developer.apple.com/xcode/downloads/</a></li>
 <li>Install MacPorts: <a href="https://www.macports.org/">https://www.macports.org/</a></li>
 <li>Install packages:<ul>
 <li><code>sudo port install x3270</code></li>
-<li><code>sudo port install c3270</code></li>
+<li><em><code>sudo port install c3270</code></em></li>
 </ul>
 </li>
 </ol>
 <h3 id="linux-ubuntu-">Linux (ubuntu)</h3>
-<p>apt-get install -y</p>
+<p><code>sudo apt-get install -y</code></p>
 <ul>
 <li><code>3270-common</code></li>
 <li><em><code>c3270</code></em></li>
@@ -59,288 +59,46 @@
 <li><code>xfonts-x3270-misc</code></li>
 </ul>
 <p><strong>Note:</strong> <em>Italicized</em> items are optional.</p>
-<h3 id="windows">Windows</h3>
-<p><strong><em>NOTE</em></strong>: If running Windows 10 and it is otherwise possible, use the Windows Subsystem for Linux to run the <code>x3270</code> version.  The Windows version is a console application, and more limited in functionality.</p>
+<h3 id="netbsd">NetBSD</h3>
+<h4 id="x3270"><code>x3270</code></h4>
+<ol>
+<li>To install <code>x3270</code>, first configure the Package system:</li>
+<li>Using <code>su</code> or <code>sudo</code>:<ul>
+<li><code>pkg_add x3270</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="c3270"><code>c3270</code></h4>
+<p>As of this writing, <code>c3270</code> is not available as a NetBSD port, and must be build by hand.</p>
+<ol>
+<li>Configure the Package system:</li>
+<li>Install <code>gmake</code>:<ul>
+<li><code>pkg_add gmake</code></li>
+</ul>
+</li>
+<li>Fetch the suite3270 source and build it:<ul>
+<li>Check <a href="http://x3270.bgp.nu/download.html">http://x3270.bgp.nu/download.html</a>  for the latest version.<br>(The following assumes (version 3.6ga8).</li>
+<li><code>ftp http://x3270.bgp.nu/download/03.06/suite3270-3.6ga8-src.tgz</code></li>
+<li><code>tar zxf suite3270-3.6ga8-src.tgz</code></li>
+<li><code>cd suite3270-3.6/</code></li>
+<li><code>./configure --enable-c3270</code></li>
+<li><code>gmake</code></li>
+<li>Using <code>su</code> or <code>sudo</code>:<ul>
+<li><code>gmake install install.man</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="installing-wc3270-on-windows-windows">Installing <code>wc3270</code> on Windows Windows</h3>
 <p>If you must run from a console Window, download from <a href="http://x3270.bgp.nu/download.html">http://x3270.bgp.nu/download.html</a> and install:</p>
 <ul>
 <li><code>wc3270</code></li>
 </ul>
-<h2 id="x-windows-x3270-on-various-platforms-">X windows (x3270 on various platforms)</h2>
-<h3 id="profile-overview">Profile overview</h3>
-<p>The profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup for x3270 keys.  Below is the primary layout by the author with alternatives.</p>
-<h3 id="program-attention-keys-pak-">Program Attention Keys (PAK)</h3>
-<p>These keys all generate an interrupt to the host.</p>
-<table>
-<thead>
-<tr>
-<th>3270 Key</th>
-<th>Emulator Key</th>
-<th>Emulator Alternatives</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Enter</code></td>
-<td>Return</td>
-</tr>
-<tr>
-<td><code>Clear</code></td>
-<td>Alt-C</td>
-<td>Meta-C</td>
-</tr>
-<tr>
-<td><code>Attn</code></td>
-<td>Alt-A</td>
-<td>Meta-A</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td><code>PA1</code></td>
-<td>F13 (aka <code>Print Screen</code>)</td>
-<td>Meta-1, Keypad-Divide (aka keypad &quot;/&quot;)</td>
-<td><em>Keypad-Divide is x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PA2</code></td>
-<td>F14 (aka <code>Scroll Lock</code>)</td>
-<td>Meta-2, Keypad-Multiply (aka keypad &quot;*&quot;)</td>
-<td><em>Keypad-Multiply is x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PA3</code></td>
-<td>F13 (aka <code>Pause</code>)</td>
-<td>Meta-3</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td><code>PF1</code></td>
-<td>F1</td>
-</tr>
-<tr>
-<td><code>PF2</code></td>
-<td>F2</td>
-</tr>
-<tr>
-<td><code>PF3</code></td>
-<td>F3</td>
-</tr>
-<tr>
-<td><code>PF4</code></td>
-<td>F4</td>
-</tr>
-<tr>
-<td><code>PF5</code></td>
-<td>F5</td>
-</tr>
-<tr>
-<td><code>PF6</code></td>
-<td>F6</td>
-</tr>
-<tr>
-<td><code>PF7</code></td>
-<td>F7</td>
-<td>Page Up</td>
-</tr>
-<tr>
-<td><code>PF8</code></td>
-<td>F8</td>
-<td>Page Down</td>
-</tr>
-<tr>
-<td><code>PF9</code></td>
-<td>F9</td>
-</tr>
-<tr>
-<td><code>PF10</code></td>
-<td>F10</td>
-</tr>
-<tr>
-<td><code>PF11</code></td>
-<td>F11</td>
-</tr>
-<tr>
-<td><code>PF12</code></td>
-<td>F12</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td><code>PF13</code></td>
-<td>Shift-F1</td>
-<td>Keypad-7</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF14</code></td>
-<td>Shift-F2</td>
-<td>Keypad-8</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF15</code></td>
-<td>Shift-F3</td>
-<td>Keypad-9</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF16</code></td>
-<td>Shift-F4</td>
-<td>Keypad-4</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF17</code></td>
-<td>Shift-F5</td>
-<td>Keypad-5</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF18</code></td>
-<td>Shift-F6</td>
-<td>Keypad-6</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF19</code></td>
-<td>Shift-F7</td>
-<td>Keypad-1</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF20</code></td>
-<td>Shift-F8</td>
-<td>Keypad-2</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF21</code></td>
-<td>Shift-F9</td>
-<td>Keypad-3</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF22</code></td>
-<td>Shift-F10</td>
-<td>Keypad-0</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF23</code></td>
-<td>Shift-F11</td>
-<td>Keypad-Decimal (AKA keypad &quot;<code>.</code>&quot;)</td>
-<td><em>x3270 only</em></td>
-</tr>
-<tr>
-<td><code>PF24</code></td>
-<td>Shift-F12</td>
-<td>Keypad-Enter, Keypad-Plus (AKA keypad &quot;<code>+</code>&quot;)</td>
-<td><em>x3270 only</em></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><strong><em>Note</em></strong>: Keys noted <strong>x3270 only</strong> are not supported by <code>c3270</code>.</p>
-<p><strong>Note</strong>: Especially in <code>c3270</code>, various keys are reserved by the operating system.  For example on MacOS Meta-I is intercepted by the <code>Terminal</code> to put up an Info box.</p>
-<h3 id="other-3270-special-keys">Other 3270 Special Keys</h3>
-<table>
-<thead>
-<tr>
-<th>3270 Key</th>
-<th>Emulator Key</th>
-<th>Emulator Alternatives</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Disconnect &amp; Exit</strong></td>
-<td>Alt-W</td>
-<td><em>c3270 only</em> also supports: Alt-Q, Ctrl-D, Alt-D</td>
-<td>You may also simply close the Window <em>after</em> logging out.</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="important-client-keys">Important Client keys</h3>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Emulator Key</th>
-<th>Emulator Alternatives</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Logical Not (¬)</code></td>
-<td>Caret (Shift-6, AKA &quot;<code>^</code>&quot;)</td>
-</tr>
-<tr>
-<td><code>Insert</code></td>
-<td>Insert</td>
-<td>Alt-Help, Meta-Help, Ctrl-Help</td>
-<td>MacOS has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270, hence the modifier key alternatives are provided.</td>
-</tr>
-<tr>
-<td><code>Client Paste</code></td>
-<td>Meta-V</td>
-<td>Shift-Insert, Mouse Button 2 (middle)</td>
-</tr>
-<tr>
-<td><code>Delete Word</code></td>
-<td>Shift-Delete</td>
-<td><code>Delete Word</code> deletes to the <em>left</em>.  Attempts to housebreak it and have it delete to the right have failed</td>
-</tr>
-<tr>
-<td><code>Delete Field</code></td>
-<td>Control-U</td>
-</tr>
-<tr>
-<td><code>Word Right</code></td>
-<td>Meta-Right Arrow</td>
-<td>Alt-Right Arrow</td>
-</tr>
-<tr>
-<td><code>Word Left</code></td>
-<td>Meta-Left Arrow</td>
-<td>Alt-Left Arrow</td>
-</tr>
-<tr>
-<td><code>Erase EOF</code></td>
-<td>Shift-End</td>
-<td>When in an unprotected field, <code>Erase EOF</code> erases from the cursor to the end of the field)</td>
-</tr>
-<tr>
-<td><code>Delete</code></td>
-<td>Delete</td>
-<td></td>
-<td><code>Delete</code> deletes the character under the cursor.  It is <em>not</em> a backspace which deletes to left.</td>
-</tr>
-<tr>
-<td><code>Reset</code></td>
-<td>Meta-R</td>
-<td>Ctrl-R</td>
-</tr>
-<tr>
-<td><code>Newline</code></td>
-<td>Shift-Return</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><strong>Note</strong>: The <code>Insert</code> function actually toggles insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off.</p>
-<h2 id="using-console-on-windows-wc3270-and-unix-mac-os">Using console on Windows (wc3270) and UNIX/Mac OS</h2>
-<h3 id="profile-overview">Profile Overview</h3>
-<p>In a manner similar to the X windows profile, the c3270 profile tweaks, and in some cases out-and-out corrects various items in the default setup for c3270 keys. For example, it adds an insert toggle.  It is not extensive or as tested as the X Windows profile -- the author follows his own advice and uses the X windows version whenever possible.</p>
-<h3 id="c3270-sh">c3270.sh</h3>
-<p>Once opened in a console window, the emulator cannot be resized. This is less of issue with <code>x3270</code> because it will always generate a window appropriate for the model of 3270 requested.  However, <code>c3270</code> itself does not check the terminal window size and automatically adjust</p>
-<p>The wrapper script <code>c3270.sh</code> checks the terminal size and uses the largest model possible for the window.
-for changes.</p>
-<p><strong>Note</strong>: If the terminal window is at least 132 columns, <code>c3270.sh</code> will favor emulating a <a href="#Terminal-Sizes">3270 model 5</a> over a taller but narrower terminal.</p>
-<p><strong><em>Note</em></strong>: If using <code>c3270.sh</code>, make the terminal window two lines <em>higher</em> than the desired the 3270 terminal size <strong>before</strong> running the program. This allows room for the top &amp; bottom lines of chrome.</p>
+<h2 id="using-under-x-windows-via-x3270-">Using Under X Windows (via <code>x3270</code>)</h2>
+<p>See the <a href="dot.x3270pro.html">dot.x3270pro documentation</a> file.</p>
+<h2 id="using-in-a-terminal-window-via-c3270-">Using in a terminal Window (via <code>c3270</code>)</h2>
+<p>See the <a href="dot.c3270pro.html">dot.c3270pro documentation</a> file.</p>
+<h2 id="using-on-a-windows-via-wc3270-">Using on a Windows (via <code>wc3270</code>)</h2>
+<p><strong><em>NOTE</em></strong>: If running Windows 10 and it is otherwise possible, use the Windows Subsystem for Linux to install and run the <code>x3270</code> version.  The Windows version is a console application, and more limited in functionality.</p>
+<p>This section to <em>To Be Determined</em>.</p>
