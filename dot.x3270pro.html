@@ -4,8 +4,14 @@
 <p>The profile adds, tweaks, and in some cases out-and-out corrects various items in the setup for x3270 keys. </p>
 <h2 id="installing-x3270">Installing x3270</h2>
 <p>See <a href="README#get-3270">README</a>.</p>
+<h2 id="x3270-sh-wrapper"><code>x3270.sh</code> wrapper</h2>
+<p>In some X Windows environments, multiple <code>x3270</code> will land on in the same position and hide each other. The (x3270.sh)[x3270.sh] script does two things:</p>
+<ul>
+<li>It randomizes the position of the <code>x3270</code> windows on the screen.</li>
+<li>It adds the to <code>x3270</code> <code>-once</code> option  to automatically close the window after session termination.</li>
+</ul>
 <h2 id="profile-keys">Profile keys</h2>
-<p>Below is the primary layout by the author with alternatives.</p>
+<p>Below is the primary layout by the author with alternative key bindings.</p>
 <h3 id="program-attention-keys-pak-">Program Attention Keys (PAK)</h3>
 <p>These keys all generate an interrupt to the host.</p>
 <table>

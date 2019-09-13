@@ -2,6 +2,7 @@
 
 all:  \
 	c3270.sh  \
+	x3270.sh  \
 	dot.c3270pro  \
 	dot.x3270pro  \
 	README.html \

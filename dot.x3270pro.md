@@ -10,8 +10,14 @@ The profile adds, tweaks, and in some cases out-and-out corrects various items i
 
 See [README](README#get-3270).
 
+## `x3270.sh` wrapper
+
+In some X Windows environments, multiple `x3270` will land on in the same position and hide each other. The (x3270.sh)[x3270.sh] script does two things:
+* It randomizes the position of the `x3270` windows on the screen.
+* It adds the to `x3270` `-once` option  to automatically close the window after session termination.
+
 ## Profile keys
-Below is the primary layout by the author with alternatives.
+Below is the primary layout by the author with alternative key bindings.
 
 ### Program Attention Keys (PAK)
 
