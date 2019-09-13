@@ -20,7 +20,7 @@ The wrapper script [c3270.sh](c3270.sh) checks the terminal size and invokes `c3
 
 ## Profile overview
 
-The profile when adds, tweaks, and in some cases out-and-out corrects various items in the default setup.  Below is the primary layout by the author with alternatives.
+The profile when adds, tweaks, and in some cases out-and-out corrects various items in the default setup.  Below is the primary layout by the author with alternative key mappings.
 
 ## Special Emulator Keys
 |	3270 Key	|	Emulator Key	|	Emulator Alternatives	|	Notes	|
