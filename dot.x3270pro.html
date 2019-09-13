@@ -1,43 +1,11 @@
 <h1 id="dot-x3270pro-x3270pro-keymap-for-x3270-readme">dot.x3270pro (<code>.x3270pro</code>) keymap for <code>x3270</code> README</h1>
 <h2 id="overview">Overview</h2>
-<p><a href="dot.x3270pro"><code>dot.x3270pro</code></a> configures key mapping for <code>x3270</code> as used by the author (<a href="mailto:swhobbit@derbyshire.us">swhobbit@derbyshire.us</a>) to access VM. To use, it should be saved in your home directory as <code>.x3270pro</code>.</p>
-<h3 id="terminal-sizes">Terminal Sizes</h3>
-<p>The standard terminal sizes for 3270 emulation are:</p>
-<table>
-<thead>
-<tr>
-<th>Model</th>
-<th>Lines</th>
-<th>Columns</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td>24</td>
-<td>80</td>
-</tr>
-<tr>
-<td>3</td>
-<td>32</td>
-<td>80</td>
-</tr>
-<tr>
-<td>4</td>
-<td>43</td>
-<td>80</td>
-</tr>
-<tr>
-<td>5</td>
-<td>27</td>
-<td>132</td>
-</tr>
-</tbody>
-</table>
+<p>The <a href="dot.x3270pro">dot.x3270pro</a> profile when installed as <code>~/.x3270pro</code> configures key mapping for <code>x3270</code> as used by the author (<a href="mailto:andrew.h@derbyshire.us">andrew.h@derbyshire.us</a>) to access VM. </p>
+<p>The profile adds, tweaks, and in some cases out-and-out corrects various items in the setup for x3270 keys. </p>
 <h2 id="installing-x3270">Installing x3270</h2>
-<p>See <a href="README#get-3270">README</a></p>
-<h2 id="profile-overview">Profile overview</h2>
-<p>The profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup for x3270 keys. Below is the primary layout by the author with alternatives.</p>
+<p>See <a href="README#get-3270">README</a>.</p>
+<h2 id="profile-keys">Profile keys</h2>
+<p>Below is the primary layout by the author with alternatives.</p>
 <h3 id="program-attention-keys-pak-">Program Attention Keys (PAK)</h3>
 <p>These keys all generate an interrupt to the host.</p>
 <table>
@@ -71,13 +39,11 @@
 <td><code>PA1</code></td>
 <td>F13 (aka <code>Print Screen</code>)</td>
 <td>Meta-1, Keypad-Divide (aka keypad &quot;/&quot;)</td>
-<td><em>Keypad-Divide is x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PA2</code></td>
 <td>F14 (aka <code>Scroll Lock</code>)</td>
 <td>Meta-2, Keypad-Multiply (aka keypad &quot;*&quot;)</td>
-<td><em>Keypad-Multiply is x3270 only</em></td>
 </tr>
 <tr>
 <td><code>PA3</code></td>
@@ -203,36 +169,37 @@
 </tbody>
 </table>
 <hr>
-<h2 id="note-various-keys-are-reserved-by-the-operating-system-for-example-on-macos-plain-help-insert-is-intercepted-"><strong>Note</strong>: Various keys are reserved by the operating system.  For example on MacOS plain <code>Help</code> (Insert) is intercepted.</h2>
-<h3 id="important-client-keys">Important Client keys</h3>
+<h3 id="important-client-keys-functions">Important Client keys / functions</h3>
 <table>
 <thead>
 <tr>
 <th>Function</th>
 <th>Emulator Key</th>
 <th>Emulator Alternatives</th>
+<th>Notes </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Logical Not (¬)</code></td>
-<td>Caret (Shift-6, AKA &quot;<code>^</code>&quot;)</td>
+<td>Caret (<code>^</code>)</td>
+</tr>
+<tr>
+<td><code>Copy</code></td>
+<td>Drag-Mouse</td>
+<td></td>
 </tr>
 <tr>
 <td><code>Insert</code></td>
 <td>Insert</td>
-<td>Alt-Help, Meta-Help, Ctrl-Help</td>
-<td>MacOS has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270, hence the modifier key alternatives are provided.</td>
-</tr>
-<tr>
-<td><code>Client Paste</code></td>
-<td>Meta-V</td>
-<td>Shift-Insert, Mouse Button 2 (middle)</td>
+<td>Alt-Insert, Meta-Insert, Ctrl-Insert</td>
+<td>MacOS has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270, hence the modifier key alternatives are provided. The <code>Insert</code> function actually toggles insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off.</td>
 </tr>
 <tr>
 <td><code>Delete Word</code></td>
 <td>Shift-Delete</td>
-<td><code>Delete Word</code> deletes to the <em>left</em>.  Attempts to housebreak it and have it delete to the right have failed</td>
+<td></td>
+<td><code>Delete Word</code> deletes the word to the <em>left</em>.  Attempts to housebreak it and have it delete to the right have failed.</td>
 </tr>
 <tr>
 <td><code>Delete Field</code></td>
@@ -251,13 +218,20 @@
 <tr>
 <td><code>Erase EOF</code></td>
 <td>Shift-End</td>
-<td>When in an unprotected field, <code>Erase EOF</code> erases from the cursor to the end of the field)</td>
+<td></td>
+<td>When in an unprotected field, <code>Erase EOF</code> erases from the cursor to the end of the field).</td>
 </tr>
 <tr>
 <td><code>Delete</code></td>
 <td>Delete</td>
 <td></td>
 <td><code>Delete</code> deletes the character under the cursor.  It is <em>not</em> a backspace which deletes to left.</td>
+</tr>
+<tr>
+<td><code>Paste</code></td>
+<td>Meta-V</td>
+<td>Shift-Insert, Mouse Button 3 (middle button)</td>
+<td>Pasting a long strings or multiple lines into formatted fields may have undesirable results.</td>
 </tr>
 <tr>
 <td><code>Reset</code></td>
@@ -271,13 +245,4 @@
 </tbody>
 </table>
 <hr>
-<p><strong>Note</strong>: The <code>Insert</code> function actually toggles insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off.</p>
-<h2 id="using-console-on-windows-wc3270-and-unix-mac-os">Using console on Windows (wc3270) and UNIX/Mac OS</h2>
-<h3 id="profile-overview">Profile Overview</h3>
-<p>In a manner similar to the X windows profile, the c3270 profile tweaks, and in some cases out-and-out corrects various items in the default setup for c3270 keys. For example, it adds an insert toggle.  It is not extensive or as tested as the X Windows profile -- the author follows his own advice and uses the X windows version whenever possible.</p>
-<h3 id="c3270-sh">c3270.sh</h3>
-<p>Once opened in a console window, the emulator cannot be resized. This is less of issue with <code>x3270</code> because it will always generate a window appropriate for the model of 3270 requested.  However, <code>c3270</code> itself does not check the terminal window size and automatically adjust</p>
-<p>The wrapper script <code>c3270.sh</code> checks the terminal size and uses the largest model possible for the window.
-for changes.</p>
-<p><strong>Note</strong>: If the terminal window is at least 132 columns, <code>c3270.sh</code> will favor emulating a <a href="#Terminal-Sizes">3270 model 5</a> over a taller but narrower terminal.</p>
-<p><strong><em>Note</em></strong>: If using <code>c3270.sh</code>, make the terminal window two lines <em>higher</em> than the desired the 3270 terminal size <strong>before</strong> running the program. This allows room for the top &amp; bottom lines of chrome.</p>
+<p><strong>Note</strong>: </p>

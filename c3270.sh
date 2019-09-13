@@ -33,7 +33,6 @@ elif [ ${lines} -ge 24 ] ; then
   model=2
 else
   echo Screen must be at least 24 lines for 3270 emulation, but is only ${lines}  2>&1
-  model=
   exit 99
 fi
 

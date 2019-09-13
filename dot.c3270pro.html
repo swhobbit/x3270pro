@@ -1,17 +1,16 @@
 <h1 id="dot-c3270pro-c3270pro-keymap-for-c3270-readme">dot.c3270pro (<code>.c3270pro</code>) keymap for <code>c3270</code> README</h1>
 <h2 id="overview">Overview</h2>
-<p><a href="dot.c3270pro"><code>dot.c3270pro</code></a> configures key mapping for <code>c3270</code> as used by the author (<a href="mailto:swhobbit@derbyshire.us">swhobbit@derbyshire.us</a>) to access VM. To use, it should be saved in your home directory as <code>.c3270pro</code>.</p>
+<p>The <a href="dot.c3270pro">dot.c3270pro</a> profile installed as <code>~/.c3270pro</code> configures the key mapping for <code>c3270</code> as used by the author (<a href="mailto:andrew.h@derbyshire.us">andrew.h@derbyshire.us</a>) to access VM and MVS.</p>
 <p><strong>Note:</strong> When available, <code>x3270</code> gives a better user experience than <code>c3270</code>.  <code>c3270</code> is useful when <code>x3270</code> is not appropriate, for example using for a long running system console under the program <code>screen</code>.</p>
+<p><strong>Note</strong>: The mouse is not supported in all environments.  The effectively disables the top of screen tabs.</p>
 <h2 id="c3270-sh-wrapper"><code>c3270.sh</code> Wrapper</h2>
 <p>Once opened in a terminal window, the <code>c3270</code> emulator size is both arbitrary and fixed; if wrong (too large), it cannot be changed without restarting the program. The fixed size is less of issue with <code>x3270</code> because it _does__ check the screen and generate a new window that fits. However, <code>c3270</code> does not check the terminal window size and simply generates a default terminal size (by default, 43 lines).</p>
-<p>The wrapper script <a href="c3270.sh"><code>c3270.sh</code></a> checks the terminal size and invokes <code>c3270</code> with the largest 3270 model size appropriate for the window.</p>
-<p><strong>Note</strong>: When the terminal window is at least 132 columns, <code>c3270.sh</code> will favor emulating a <a href="Readme#Terminal-Sizes">3270 model 5</a> over a taller but narrower terminal.</p>
-<p><strong><em>Note</em></strong>: When using <code>c3270</code>, make the terminal window two lines <em>higher</em> than the desired the 3270 terminal size <em>before</em> running the program. This allows room for the top &amp; bottom lines of chrome.</p>
+<p>The wrapper script <a href="c3270.sh">c3270.sh</a> checks the terminal size and invokes <code>c3270</code> with the largest 3270 model size appropriate for the window.</p>
+<p><strong>Note</strong>: When the terminal window is tall enough and at least 132 columns, <code>c3270.sh</code> will favor emulating a <a href="README.html#terminal-sizes">3270 model 5</a> over a taller but narrower terminal.</p>
+<p><strong><em>Note</em></strong>: When using <code>c3270</code>, make the terminal window two lines <em>higher</em> than the desired 3270 terminal size <em>before</em> running the program. This allows room for the top &amp; bottom lines of chrome.</p>
 <h2 id="profile-overview">Profile overview</h2>
-<p>The <code>dot.c3270pro</code> profile adds, tweaks, and in some cases out-and-out corrects various items in the default setup.  Below is the primary layout by the author with alternatives.</p>
-<p><strong>Note</strong>: Various keys combinations are reserved by the operating system.  For example on MacOS Meta-I is intercepted by the <code>Terminal</code> to put up an Info box.</p>
-<p><strong>Note:</strong> No shifted keys combinations are available under <code>c3270</code>.</p>
-<h3 id="special-emulator-keys">Special Emulator Keys</h3>
+<p>The profile when adds, tweaks, and in some cases out-and-out corrects various items in the default setup.  Below is the primary layout by the author with alternatives.</p>
+<h2 id="special-emulator-keys">Special Emulator Keys</h2>
 <table>
 <thead>
 <tr>
@@ -32,7 +31,7 @@
 <td><strong>Pop-up Keypad</strong></td>
 <td>Ctrl-K</td>
 <td></td>
-<td>Displays a keypad of with <code>PAn</code> &amp; <code>PFn</code> keys, <code>Reset</code>, <code>Insert</code>, <code>Attn</code>, <code>Clear</code> and virtually all other 3270 specific keys.</td>
+<td>Displays a keypad of with the <a href="#program-attention-keys-pak">Program Attention Keys</a>, <code>Reset</code>, <code>Insert</code>, <code>Attn</code>, <code>Clear</code> and virtually all other 3270 specific keys.</td>
 </tr>
 </tbody>
 </table>
@@ -155,7 +154,7 @@
 <td><code>Insert</code></td>
 <td>Insert</td>
 <td>Alt-Help, Ctrl-Help</td>
-<td>MacOS has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270, hence the modifier keys. The <code>Insert</code> function actually toggles insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off. alternatives are provided.</td>
+<td>MacOS has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270, hence the modifier keys. As configured, <code>Insert</code> function actually toggles insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off.</td>
 </tr>
 <tr>
 <td><code>Client Paste</code></td>
@@ -207,4 +206,3 @@
 </tbody>
 </table>
 <hr>
-<p><strong>Note</strong>: The mouse is not supported in all environments.</p>

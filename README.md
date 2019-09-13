@@ -11,13 +11,13 @@ This repository exists to provide an example of key mapping for `x3270` and `c32
 The standard terminal sizes for 3270 emulation are:
 
 | Model | Lines | Columns |
-| ----- | ----- | ------  |
+| ----- | ----- | ------- |
 |  2    |   24  |   80    |
 |  3    |   32  |   80    |
 |  4    |   43  |   80    |
 |  5    |   27  |   132   |
 
-## Installing x3270
+## Installing `x3270` / `c3270`
 
 ### MacOS
 
@@ -26,19 +26,19 @@ The standard terminal sizes for 3270 emulation are:
 1. Install MacPorts: https://www.macports.org/
 1. Install packages:
    * `sudo port install x3270`
-   * _`sudo port install c3270`_
+   * `sudo port install c3270`
 
 ### Linux (ubuntu)
 
 `sudo apt-get install -y`
 * `3270-common`
-* _`c3270`_
+* `c3270`_
 * `fonts-3270`
 * _`pr3287`_
 * _`s3270`_
-* `x3270`
-* `x3270-doc`
-* `xfonts-x3270-misc`
+* x3270
+* x3270-doc
+* `fonts-x3270-misc
 
 __Note:__ _Italicized_ items are optional.
 
@@ -83,6 +83,6 @@ See the [dot.x3270pro documentation](dot.x3270pro.md) file.
 
 See the [dot.c3270pro documentation](dot.c3270pro.md) file.
 
-## Using on a Windows (via `wc3270`)\
+## Using on a Windows (via `wc3270`)
 
 This section to _To Be Determined_.
