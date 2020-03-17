@@ -36,7 +36,22 @@ c3270.keymap.kendra:	\
 	Ctrl<Key>q <Key>3:	PA(3)\n\
 	Ctrl<Key>v:	insert-selection("PRIMARY")\n\
 	Ctrl<Key>x:	Cut("CLIPBOARD")\n\
-	<Key>BTAB:	BackTab()
+	<Key>BTAB:	BackTab()\n\
+	Alt<Key>[ <Key>1 <Key>1 <Key>~:	PF(1)\n\
+	Alt<Key>[ <Key>1 <Key>2 <Key>~:	PF(2)\n\
+	Alt<Key>[ <Key>1 <Key>3 <Key>~:	PF(3)\n\
+	Alt<Key>[ <Key>1 <Key>4 <Key>~:	PF(4)\n\
+	Alt<Key>[ <Key>1 <Key>5 <Key>~:	PF(5)\n\
+	Alt<Key>[ <Key>1 <Key>7 <Key>~:	PF(6)\n\
+	Alt<Key>[ <Key>1 <Key>8 <Key>~:	PF(7)\n\
+	Alt<Key>[ <Key>1 <Key>9 <Key>~:	PF(8)\n\
+	Alt<Key>[ <Key>2 <Key>0 <Key>~:	PF(9)\n\
+	Alt<Key>[ <Key>2 <Key>1 <Key>~:	PF(10)\n\
+	Alt<Key>[ <Key>2 <Key>2 <Key>~:	PF(11)\n\
+	Alt<Key>[ <Key>2 <Key>4 <Key>~:	PF(12)\n\
+	<Key>U+00b1:	PA(1)\n\
+	<Key>U+00b2:	PA(2)\n\
+	<Key>U+00b3:	PA(3)
 
 c3270.cursesColorForDefault:	green
 c3270.cursesColorForIntensified:	magenta
