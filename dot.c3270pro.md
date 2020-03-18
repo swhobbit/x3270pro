@@ -38,11 +38,9 @@ These keys all generate an interrupt to the host.
 |	`Enter`	|	`Enter`	|
 |	`Clear`	|	Alt-C	|
 |	`Attn`	|	Alt-A	|
-|
 |	`PA1`	|	F13 (aka `Print Screen`)	|	Alt-1	|
 |	`PA2`	|	F14 (aka `Scroll Lock`)	|	Alt-2	|	PA2 clears the screen on the virtual console when not in full screen mode (such as the editor).
 |	`PA3`	|	F13 (aka `Pause`)	|	Alt-3	|
-|
 |	`PF1`	|	F1	|
 |	`PF2`	|	F2	|
 |	`PF3`	|	F3	|
