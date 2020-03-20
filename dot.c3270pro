@@ -46,9 +46,7 @@ c3270.keymap.generic:	\
 	Ctrl<Key>v:	insert-selection("PRIMARY")\n\
 	Ctrl<Key>x:	Cut("CLIPBOARD")
 
-! xterm F13-F15 map to keys PA1-3 on any terminal which matches the
-! curses definition and doesn't have an OS which intercepts them
-! for Print Screen, Scroll Lock, and or Pause!
+! Yet another PA configuration, this one associated with vt-100s
 
 c3270.keymap.curses-PAK:	\
 	<Key>U+00b1:	PA(1)\n\
