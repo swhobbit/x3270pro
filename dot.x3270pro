@@ -52,7 +52,11 @@ x3270.keymap.kendra:	#override \
 	<Key>KP_0:	PF(22)\n\
 	<Key>KP_Decimal:	PF(23)\n\
 	<Key>KP_Enter:	PF(24)\n\
-	<Key>KP_Add:	PF(24)
+	<Key>KP_Add:	PF(24)\n\
+	<Key>Print:	PA(1)\n\
+	<Key>Scroll_Lock:	PA(2)\n\
+	<Key>Pause:	PA(3)
+
 x3270.dsTrace:	false
 x3270.emulatorFont:	3270-20
 x3270.extended:	true
