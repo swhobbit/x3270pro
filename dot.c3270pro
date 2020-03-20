@@ -1,42 +1,73 @@
 ! vim:	ts=8 noexpandtab
 
-! Definition of the 'kendra' keymap
-c3270.keymap.kendra:	\
-	<Key>^:	Key(notsign)\n\
+!	        Keymap definitions for c3270
+!
+!         Date: 19 Mar 2020 (revised and documented)
+!       Author: ahd@kew.com (Drew Derbyshire)
+!      Address: Kendra Electronic Wonderworks
+!	        Kenmore, WA
+
+! The generic map provides a not sign (¬) in place of the caret, and
+! keys for functions like client-side editing and program control.
+! The map overrides the compiled in base keymap in the following
+! cases:
+!
+! * NPAGE (scroll client forward) and PPAGE (scroll client previous)
+!   are more useful to tell the host the standard PF keys for forward
+!   and back.
+! * Ctrl-D (FieldMark) Dup and Ctrl-F (FieldMark) are two functions
+!   I never used during 16 years of daily 3270 work. The keys are
+!   better suited for Disconnect and NextWord
+
+c3270.keymap.generic:	\
+	<Key>BTAB:	BackTab()\n\
 	<Key>F13:	PA(1)\n\
 	<Key>F14:	PA(2)\n\
 	<Key>F15:	PA(3)\n\
-	<Key>PPAGE:	PF(7)\n\
 	<Key>NPAGE:	PF(8)\n\
+	<Key>PPAGE:	PF(7)\n\
 	<Key>U+007F:	Erase\n\
-	Alt<Key>[ <Key>2 <Key>5 <Key>~:	PA(1)\n\
-	Alt<Key>[ <Key>2 <Key>6 <Key>~:	PA(2)\n\
-	Alt<Key>[ <Key>2 <Key>8 <Key>~:	PA(3)\n\
-	Alt<Key>+:	EraseEOF()\n\
-	Alt<Key>(:	Deleteword()\n\
-	Alt<Key>1:	PA(1)\n\
-	Alt<Key>2:	PA(2)\n\
-	Alt<Key>3:	PA(3)\n\
+	<Key>^:		Key(notsign)\n\
+	Ctrl<Key>a <Key>^:	Key(^)\n\
+	Alt<Key>a:	Attn()\n\
 	Alt<Key>b:	PreviousWord()\n\
+	Alt<Key>c:	Clear()\n\
+	Alt<Key>d:	Disconnect()\n\
+	Alt<Key>e:	EraseEOF()\n\
 	Alt<Key>f:	NextWord()\n\
 	Alt<Key>i:	ToggleInsert()\n\
-	Alt<Key>v:	insert-selection("PRIMARY")\n\
-	Alt<Key>x:	Cut("CLIPBOARD")\n\
-	Alt<Key>c:	Clear()\n\
-	Alt<Key>a:	Attn()\n\
-	Alt<Key>w:	Disconnect()\n\
-	Alt<Key>d:	Disconnect()\n\
 	Alt<Key>q:	Disconnect()\n\
-	Ctrl<Key>d:	Disconnect()\n\
+	Alt<Key>v:	insert-selection("PRIMARY")\n\
+	Alt<Key>w:	Disconnect()\n\
+	Alt<Key>x:	Cut("CLIPBOARD")\n\
 	Ctrl<Key>b:	PreviousWord()\n\
+	Ctrl<Key>d:	Disconnect()\n\
 	Ctrl<Key>f:	NextWord()\n\
-	Alt<Key>i:	ToggleInsert()\n\
-	Ctrl<Key>q <Key>1:	PA(1)\n\
-	Ctrl<Key>q <Key>2:	PA(2)\n\
-	Ctrl<Key>q <Key>3:	PA(3)\n\
 	Ctrl<Key>v:	insert-selection("PRIMARY")\n\
-	Ctrl<Key>x:	Cut("CLIPBOARD")\n\
-	<Key>BTAB:	BackTab()\n\
+	Ctrl<Key>x:	Cut("CLIPBOARD")
+
+! xterm F13-F15 map to keys PA1-3 on any terminal which matches the
+! curses definition and doesn't have an OS which intercepts them
+! for Print Screen, Scroll Lock, and or Pause!
+
+c3270.keymap.curses-PAK:	\
+	<Key>U+00b1:	PA(1)\n\
+	<Key>U+00b2:	PA(2)\n\
+	<Key>U+00b3:	PA(3)
+
+! xterm-color256 F13-F15 on MacOS Catalina doesn't match the
+! curses definition.
+
+c3270.keymap.xterm-256color:	\
+	Alt<Key>[ <Key>2 <Key>5 <Key>~:	PA(1)\n\
+	Alt<Key>[ <Key>2 <Key>6 <Key>~:	PA(2)\n\
+	Alt<Key>[ <Key>2 <Key>8 <Key>~:	PA(3)
+
+! The NetBSD 7.2 console claims to be a VT-100 but sends keys for
+! a VT-220.  A better solution than enabling this keymap is to set
+! TERM=wsvt25 when running c3270 on the NetBSD console.
+
+c3270.keymap.netbsd.console:    \
 	Alt<Key>[ <Key>1 <Key>1 <Key>~:	PF(1)\n\
 	Alt<Key>[ <Key>1 <Key>2 <Key>~:	PF(2)\n\
 	Alt<Key>[ <Key>1 <Key>3 <Key>~:	PF(3)\n\
@@ -47,16 +78,13 @@ c3270.keymap.kendra:	\
 	Alt<Key>[ <Key>1 <Key>9 <Key>~:	PF(8)\n\
 	Alt<Key>[ <Key>2 <Key>0 <Key>~:	PF(9)\n\
 	Alt<Key>[ <Key>2 <Key>1 <Key>~:	PF(10)\n\
-	Alt<Key>[ <Key>2 <Key>2 <Key>~:	PF(11)\n\
+	Alt<Key>[ <Key>2 <Key>3 <Key>~:	PF(11)\n\
 	Alt<Key>[ <Key>2 <Key>4 <Key>~:	PF(12)\n\
-	<Key>U+00b1:	PA(1)\n\
-	<Key>U+00b2:	PA(2)\n\
-	<Key>U+00b3:	PA(3)
 
 c3270.cursesColorForDefault:	green
 c3270.cursesColorForIntensified:	magenta
 c3270.cursesColorForProtected:	cyan
 c3270.cursesColorForProtectedIntensified:	white
 
-! Use the 'kendra' keymap, defined above
-c3270.keymap:	kendra
+! Use the keymaps defined above.
+c3270.keymap:	xterm-256color,curses-PAK,generic
