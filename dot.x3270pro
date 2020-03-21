@@ -1,26 +1,10 @@
-! x3270 profile
-! File created Wed Jan  1 10:36:36 2014 by x3270 v3.3.11ga6 Sat Nov  9 10:16:57 PST 2013 root
-! This file overrides xrdb and .Xdefaults.
-! To skip reading this file, set NOX3270PRO in the environment.
+
+! Due to search order, shifted keys must be first!
 !
-! Use the 'kendra' keymap, defined below
-x3270.keymap:	kendra
-! Definition of the 'kendra' keymap
-x3270.keymap.kendra:	#override \
-	Shift<Key>Prior:	PF(19)\n\
-	Shift<Key>Next:	PF(20)\n\
-	<Key>Prior:	PF(7)\n\
-	<Key>Next:	PF(8)\n\
-	Meta<Key>F1:	PA(1)\n\
-	Meta<Key>F2:	PA(2)\n\
-	Meta<Key>F3:	PA(3)\n\
-	<Key>F13:	PA(1)\n\
-	<Key>F14:	PA(2)\n\
-	<Key>F15:	PA(3)\n\
-	<Key>XF86Tools:	PA(1)\n\
-	<Key>XF86Launch5:	PA(2)\n\
-	<Key>XF86Launch6:	PA(3)\n\
-	Shift<Key>6:	CircumNot()\n\
+! Note: The bare Help key is eaten on by MacOS, hence the modified
+!       versions of it.
+
+x3270.keymap.generic:	#override \
 	Shift<Key>Delete:	DeleteWord()\n\
 	<Key>Delete:	Delete()\n\
 	Shift<Key>End:	EraseEOF()\n\
@@ -29,17 +13,56 @@ x3270.keymap.kendra:	#override \
 	Alt<Key>Right:	NextWord()\n\
 	Shift<Key>Tab:	BackTab()\n\
 	<Key>Insert:	ToggleInsert()\n\
-	Meta<Key>Insert:	ToggleInsert()\n\
-	Alt<Key>Insert:	ToggleInsert()\n\
-	Ctrl<Key>Insert:	ToggleInsert()\n\
 	Meta<Key>Help:	ToggleInsert()\n\
 	Alt<Key>Help:	ToggleInsert()\n\
 	Ctrl<Key>Help:	ToggleInsert()\n\
+	<Key>Help:	ToggleInsert()\n\
 	Meta<Key>v:	insert-selection("PRIMARY")\n\
 	Meta<Key>x:	Cut("CLIPBOARD")\n\
 	Meta<Key>i:	ToggleInsert()\n\
+
+! Make page up/down the standard PF keys for up (PF7) & down (PF8)
+! Due to search order, shifted keys must be first!
+
+x3270.keymap.pc-scroll:	\
+	Shift<Key>Prior:	PF(19)\n\
+	Shift<Key>Next:	PF(20)\n\
+	<Key>Prior:	PF(7)\n\
+	<Key>Next:	PF(8)
+
+!
+!	Which of the following triple of keys applies depends not so much
+!	on the keyboard (for example US Mac and US PC-compatible keyboards
+!	send much the same thing), but what OS and implementation of X
+!	Windows is interpreting the keystrokes.  So we define them all.
+!
+
+! The names of keys in XF86keysym.h to right of F12. 
+
+x3270.keymap.XF86keysym-PAK:	\
+	<Key>XF86Tools:	PA(1)\n\
+	<Key>XF86Launch5:	PA(2)\n\
+	<Key>XF86Launch6:	PA(3)
+
+! The keys on a PC compatible keyboard to right of F12.
+
+x3270.keymap.pc-PAK:	\
+	<Key>Print:	PA(1)\n\
+	<Key>Scroll_Lock:	PA(2)\n\
+	<Key>Pause:	PA(3)
+
+! The keys on a Apple Mac compatible keyboard to right of F12.
+x3270.keymap.mac-PAK:	\
+	<Key>F13:	PA(1)\n\
+	<Key>F14:	PA(2)\n\
+	<Key>F15:	PA(3)
+
+! Make the PC keypad act as PA1-PA3 & PF13-PF24
+
+x3270.keymap.pc-numeric:	\
 	<Key>KP_Divide:	PA(1)\n\
 	<Key>KP_Multiply:	PA(2)\n\
+	<Key>KP_Subtract:	PA(3)\n\
 	<Key>KP_7:	PF(13)\n\
 	<Key>KP_8:	PF(14)\n\
 	<Key>KP_9:	PF(15)\n\
@@ -51,11 +74,11 @@ x3270.keymap.kendra:	#override \
 	<Key>KP_3:	PF(21)\n\
 	<Key>KP_0:	PF(22)\n\
 	<Key>KP_Decimal:	PF(23)\n\
-	<Key>KP_Enter:	PF(24)\n\
-	<Key>KP_Add:	PF(24)\n\
-	<Key>Print:	PA(1)\n\
-	<Key>Scroll_Lock:	PA(2)\n\
-	<Key>Pause:	PA(3)
+	<Key>KP_Enter:	PF(24)
+
+! Use the keymaps defined above; "not" make only work on US keyboards.
+
+x3270.keymap:	not,pc-PAK,mac-PAK,pc-scroll,pc-numeric,generic
 
 x3270.dsTrace:	false
 x3270.emulatorFont:	3270-20
