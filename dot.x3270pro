@@ -1,8 +1,5 @@
 
 ! Due to search order, shifted keys must be first!
-!
-! Note: The bare Help key is eaten on by MacOS, hence the modified
-!       versions of it.
 
 x3270.keymap.generic:	#override \
 	Shift<Key>Delete:	DeleteWord()\n\
@@ -12,14 +9,24 @@ x3270.keymap.generic:	#override \
 	Alt<Key>Left:	PreviousWord()\n\
 	Alt<Key>Right:	NextWord()\n\
 	Shift<Key>Tab:	BackTab()\n\
-	<Key>Insert:	ToggleInsert()\n\
+	Meta<Key>v:	insert-selection("PRIMARY")\n\
+	Meta<Key>x:	Cut("CLIPBOARD")
+
+! The full Mac keyboard has "Help" where the PC key board has "Insert", and
+! we use it as the latter.  Set all Help key variations (and the PC Insert key)
+! to toggle Insert on and off, as opposed to the real hardware which turns ON
+! Insert with the key but turns it OFF via the reset key.
+!
+! Note: The bare Help key is eaten on by MacOS, hence the modified versions.
+!
+! Due to search order, shifted keys must be first!
+
+x3270.keymap.insert:
 	Meta<Key>Help:	ToggleInsert()\n\
 	Alt<Key>Help:	ToggleInsert()\n\
 	Ctrl<Key>Help:	ToggleInsert()\n\
 	<Key>Help:	ToggleInsert()\n\
-	Meta<Key>v:	insert-selection("PRIMARY")\n\
-	Meta<Key>x:	Cut("CLIPBOARD")\n\
-	Meta<Key>i:	ToggleInsert()\n\
+	<Key>Insert:	ToggleInsert()
 
 ! Make page up/down the standard PF keys for up (PF7) & down (PF8)
 ! Due to search order, shifted keys must be first!
@@ -37,21 +44,21 @@ x3270.keymap.pc-scroll:	\
 !	Windows is interpreting the keystrokes.  So we define them all.
 !
 
-! The names of keys in XF86keysym.h to right of F12. 
+! The names of keys in XF86keysym.h to the right of F12.
 
 x3270.keymap.XF86keysym-PAK:	\
 	<Key>XF86Tools:	PA(1)\n\
 	<Key>XF86Launch5:	PA(2)\n\
 	<Key>XF86Launch6:	PA(3)
 
-! The keys on a PC compatible keyboard to right of F12.
+! The keys on a PC compatible keyboard to the right of F12.
 
 x3270.keymap.pc-PAK:	\
 	<Key>Print:	PA(1)\n\
 	<Key>Scroll_Lock:	PA(2)\n\
 	<Key>Pause:	PA(3)
 
-! The keys on a Apple Mac compatible keyboard to right of F12.
+! The keys on a Apple Mac compatible keyboard to the right of F12.
 x3270.keymap.mac-PAK:	\
 	<Key>F13:	PA(1)\n\
 	<Key>F14:	PA(2)\n\

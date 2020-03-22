@@ -1,6 +1,6 @@
 ! vim:	ts=8 noexpandtab
 
-!	        Keymap definitions for c3270
+!		Keymap definitions for c3270
 !
 !         Date: 19 Mar 2020 (revised and documented)
 !       Author: ahd@kew.com (Drew Derbyshire)
@@ -21,21 +21,13 @@
 
 c3270.keymap.generic:	\
 	<Key>BTAB:	BackTab()\n\
-	<Key>F13:	PA(1)\n\
-	<Key>F14:	PA(2)\n\
-	<Key>F15:	PA(3)\n\
-	<Key>NPAGE:	PF(8)\n\
-	<Key>PPAGE:	PF(7)\n\
 	<Key>U+007F:	Erase\n\
-	<Key>^:		Key(notsign)\n\
-	Ctrl<Key>a <Key>^:	Key(^)\n\
 	Alt<Key>a:	Attn()\n\
 	Alt<Key>b:	PreviousWord()\n\
 	Alt<Key>c:	Clear()\n\
 	Alt<Key>d:	Disconnect()\n\
 	Alt<Key>e:	EraseEOF()\n\
 	Alt<Key>f:	NextWord()\n\
-	Alt<Key>i:	ToggleInsert()\n\
 	Alt<Key>q:	Disconnect()\n\
 	Alt<Key>v:	insert-selection("PRIMARY")\n\
 	Alt<Key>w:	Disconnect()\n\
@@ -46,26 +38,72 @@ c3270.keymap.generic:	\
 	Ctrl<Key>v:	insert-selection("PRIMARY")\n\
 	Ctrl<Key>x:	Cut("CLIPBOARD")
 
-! Yet another PA configuration, this one associated with vt-100s
+! The full Mac keyboard has "Help" where the PC key board has "Insert", and
+! we use it as the latter. Set all Help key variations to toggle Insert on and
+! off, as opposed to the real hardware which turns Insert ON with the key but
+! turns it OFF via the RESET key.
+!
+! Alt<F> is Alt<Key>Help, but c3270 doesn't let us call it that.
+!
+! Note: The bare Help key is eaten on by MacOS, hence the modified versions.
+!
+! Due to search order, shifted keys must be first!
+
+c3270.keymap.insert:	\
+	Alt<Key>F:	ToggleInsert()\n\
+	<Key>Help:	ToggleInsert()\n\
+	Ctrl<Key>A <Key>i:	ToggleInsert()\n\
+	Alt<Key>i:	ToggleInsert()
+
+! Make page up/down the standard PF keys for up (PF7) & down (PF8)
+
+c3270.keymap.scroll:	\
+	<Key>PPAGE:	PF(7)\n\
+	<Key>NPAGE:	PF(8)
+
+!
+!	PA keys are important on IBM VM hosts, so we provide several mappings
+!	below to avoid making the user hit a chord every time they want a
+!	common function. (This is a reason in and of itself to use x3270,
+!	which doesn't have the problem nearly as much.)
+!
+
+! The names of keys as defined by curses to the right of F12.
 
 c3270.keymap.curses-PAK:	\
-	<Key>U+00b1:	PA(1)\n\
-	<Key>U+00b2:	PA(2)\n\
-	<Key>U+00b3:	PA(3)
+	<Key>F13:	PA(1)\n\
+	<Key>F14:	PA(2)\n\
+	<Key>F15:	PA(3)\n\
 
+! The strings sent by Macs for keys to the right of F12.
+!
 ! xterm-color256 F13-F15 on MacOS Catalina doesn't match the
 ! curses definition.
 
-c3270.keymap.xterm-256color:	\
+c3270.keymap.xterm-256color-PAK:	\
 	Alt<Key>[ <Key>2 <Key>5 <Key>~:	PA(1)\n\
 	Alt<Key>[ <Key>2 <Key>6 <Key>~:	PA(2)\n\
 	Alt<Key>[ <Key>2 <Key>8 <Key>~:	PA(3)
 
-! The NetBSD 7.2 console claims to be a VT-100 but sends keys for
-! a VT-220.  A better solution than enabling this keymap is to set
-! TERM=wsvt25 when running c3270 on the NetBSD console.
+! The strings sent by VT-100 terminals for keys to the right of F12.
 
-c3270.keymap.netbsd.console:    \
+c3270.keymap.vt100-PAK:	\
+	<Key>U+00b1:	PA(1)\n\
+	<Key>U+00b2:	PA(2)\n\
+	<Key>U+00b3:	PA(3)
+
+! c3270 doesn't know about most of the keypad, so we can only define ENTER
+! as PA2 (which clears the screen output in a terminal VM session).
+! (wc3270 knows most of the keypad, but this isn't a wc3270 configuration).
+
+c3270.keymap.pc-numeric:	\
+	<Key>ENTER:	PA(2)
+
+! The NetBSD 7.2 console with wscons claims to be a VT-100 but sends
+! keys for a VT-220. A better solution than enabling this keymap is
+! to set TERM=wsvt25 when running c3270 on the NetBSD console.
+
+c3270.keymap.netbsd.console:	 \
 	Alt<Key>[ <Key>1 <Key>1 <Key>~:	PF(1)\n\
 	Alt<Key>[ <Key>1 <Key>2 <Key>~:	PF(2)\n\
 	Alt<Key>[ <Key>1 <Key>3 <Key>~:	PF(3)\n\
@@ -77,7 +115,7 @@ c3270.keymap.netbsd.console:    \
 	Alt<Key>[ <Key>2 <Key>0 <Key>~:	PF(9)\n\
 	Alt<Key>[ <Key>2 <Key>1 <Key>~:	PF(10)\n\
 	Alt<Key>[ <Key>2 <Key>3 <Key>~:	PF(11)\n\
-	Alt<Key>[ <Key>2 <Key>4 <Key>~:	PF(12)\n\
+	Alt<Key>[ <Key>2 <Key>4 <Key>~:	PF(12)
 
 c3270.cursesColorForDefault:	green
 c3270.cursesColorForIntensified:	magenta
@@ -85,4 +123,4 @@ c3270.cursesColorForProtected:	cyan
 c3270.cursesColorForProtectedIntensified:	white
 
 ! Use the keymaps defined above.
-c3270.keymap:	xterm-256color,curses-PAK,generic
+c3270.keymap:	pc-numeric,curses-PAK,xterm-256color-PAK,vt100-PAK,insert,scroll,generic
