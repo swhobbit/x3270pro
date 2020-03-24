@@ -21,7 +21,7 @@ x3270.keymap.generic:	#override \
 !
 ! Due to search order, shifted keys must be first!
 
-x3270.keymap.insert:
+x3270.keymap.insert:	\
 	Meta<Key>Help:	ToggleInsert()\n\
 	Alt<Key>Help:	ToggleInsert()\n\
 	Ctrl<Key>Help:	ToggleInsert()\n\
@@ -85,7 +85,7 @@ x3270.keymap.pc-numeric:	\
 
 ! Use the keymaps defined above; "not" make only work on US keyboards.
 
-x3270.keymap:	not,pc-PAK,mac-PAK,pc-scroll,pc-numeric,generic
+x3270.keymap:	not,pc-PAK,mac-PAK,XF86keysym-PAK,pc-scroll,pc-numeric,insert,generic
 
 x3270.dsTrace:	false
 x3270.emulatorFont:	3270-20
