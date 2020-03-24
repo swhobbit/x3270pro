@@ -98,32 +98,36 @@ c3270.keymap.vt100-PAK:	\
 	<Key>U+00b2:	PA(2)\n\
 	<Key>U+00b3:	PA(3)
 
-! c3270 doesn't know about most of the keypad, so we can only define ENTER
-! as PA2 (which clears the screen output in a terminal VM session).
-! (wc3270 knows most of the keypad, but this isn't a wc3270 configuration).
+! c3270 doesn't know the names of most of the keypad keys, so we can
+! only define ENTER by name, the rest by sequence. On the keypad:
+!
+!	PF13-PF24 are (in order) 789 456 123 0 . (period) ENTER
+!       PA1 is - (minus) and PA2 is + (plus sign)
+!
+! Note if the emulator (i.e. Putty) enables the VT-100 PF keys,
+! the top row including - (minus) returns PF1-PF4, not as documented
+! above.
 
 c3270.keymap.pc-keypad:	\
-        Alt<Key>[ <Key>O <Key>w: PF(13)\n\
-	<Key>A1:	PF(13)\n\
-        Alt<Key>[ <Key>O <Key>x: PF(14)\n\
-	Alt<Key>[ <Key>O <Key>y: PF(15)\n\
-	<Key>A3:	PF(15)\n\
-	Alt<Key>[ <Key>O <Key>t: PF(16)\n\
-	Alt<Key>[ <Key>O <Key>u: PF(17)\n\
-	<Key>B2:	PF(17)\n\
-	Alt<Key>[ <Key>O <Key>v: PF(18)\n\
-	Alt<Key>[ <Key>O <Key>q: PF(19)\n\
-	<Key>C1:	PF(19)\n\
-	Alt<Key>[ <Key>O <Key>r: PF(20)\n\
-	Alt<Key>[ <Key>O <Key>s: PF(21)\n\
-	<Key>C3:	PF(21)\n\
-	Alt<Key>[ <Key>O <Key>p: PF(22)\n\
-	Alt<Key>[ <Key>O <Key>n: PF(23)\n\
-	<Key>ENTER:	PA(2)
+        Alt<Key>O <Key>w:	PF(13)\n\
+        Alt<Key>O <Key>x:	PF(14)\n\
+	Alt<Key>O <Key>y:	PF(15)\n\
+	Alt<Key>O <Key>t:	PF(16)\n\
+	Alt<Key>O <Key>u:	PF(17)\n\
+	Alt<Key>O <Key>v:	PF(18)\n\
+	Alt<Key>O <Key>q:	PF(19)\n\
+	Alt<Key>O <Key>r:	PF(20)\n\
+	Alt<Key>O <Key>s:	PF(21)\n\
+	Alt<Key>O <Key>p:	PF(22)\n\
+	Alt<Key>O <Key>n:	PF(23)\n\
+	<Key>ENTER:	PF(24)\n\
+	Alt<Key>O <Key>m:	PA(1)\n\
+	Alt<Key>O <Key>l:	PA(2)\n\
 
 ! The NetBSD 7.2 console with wscons claims to be a VT-100 but sends
-! keys for a VT-220. A better solution than enabling this keymap is
-! to set TERM=wsvt25 when running c3270 on the NetBSD console.
+! keys for a VT-220. This keymap is DISABLED.  A better solution
+! than enabling this keymap is to set TERM=wsvt25 when running c3270
+! on the NetBSD console.
 
 c3270.keymap.netbsd.console:	 \
 	Alt<Key>[ <Key>1 <Key>1 <Key>~:	PF(1)\n\
@@ -143,7 +147,6 @@ c3270.cursesColorForDefault:	green
 c3270.cursesColorForIntensified:	magenta
 c3270.cursesColorForProtected:	cyan
 c3270.cursesColorForProtectedIntensified:	white
-c3270.acs: true
 
 ! Use the keymaps defined above.
-c3270.keymap:	curses-PAK,generic,insert,pc-keypad,scroll,vt100-PAK,xterm-256color-PAK,xterm-PFK
+c3270.keymap:	generic,insert,pc-keypad,vt100-PAK,xterm-256color-PAK,xterm-PFK,curses-PAK,scroll
