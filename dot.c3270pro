@@ -75,6 +75,12 @@ c3270.keymap.curses-PAK:	\
 	<Key>F14:	PA(2)\n\
 	<Key>F15:	PA(3)\n\
 
+c3270.keymap.xterm-PFK:	\
+	Alt<Key>[ <Key>1 <Key>1 <Key>~:	PF(1)\n\
+	Alt<Key>[ <Key>1 <Key>2 <Key>~:	PF(2)\n\
+	Alt<Key>[ <Key>1 <Key>3 <Key>~:	PF(3)\n\
+	Alt<Key>[ <Key>1 <Key>4 <Key>~:	PF(4)
+
 ! The strings sent by Macs for keys to the right of F12.
 !
 ! xterm-color256 F13-F15 on MacOS Catalina doesn't match the
@@ -96,7 +102,23 @@ c3270.keymap.vt100-PAK:	\
 ! as PA2 (which clears the screen output in a terminal VM session).
 ! (wc3270 knows most of the keypad, but this isn't a wc3270 configuration).
 
-c3270.keymap.pc-numeric:	\
+c3270.keymap.pc-keypad:	\
+        Alt<Key>[ <Key>O <Key>w: PF(13)\n\
+	<Key>A1:	PF(13)\n\
+        Alt<Key>[ <Key>O <Key>x: PF(14)\n\
+	Alt<Key>[ <Key>O <Key>y: PF(15)\n\
+	<Key>A3:	PF(15)\n\
+	Alt<Key>[ <Key>O <Key>t: PF(16)\n\
+	Alt<Key>[ <Key>O <Key>u: PF(17)\n\
+	<Key>B2:	PF(17)\n\
+	Alt<Key>[ <Key>O <Key>v: PF(18)\n\
+	Alt<Key>[ <Key>O <Key>q: PF(19)\n\
+	<Key>C1:	PF(19)\n\
+	Alt<Key>[ <Key>O <Key>r: PF(20)\n\
+	Alt<Key>[ <Key>O <Key>s: PF(21)\n\
+	<Key>C3:	PF(21)\n\
+	Alt<Key>[ <Key>O <Key>p: PF(22)\n\
+	Alt<Key>[ <Key>O <Key>n: PF(23)\n\
 	<Key>ENTER:	PA(2)
 
 ! The NetBSD 7.2 console with wscons claims to be a VT-100 but sends
@@ -121,6 +143,7 @@ c3270.cursesColorForDefault:	green
 c3270.cursesColorForIntensified:	magenta
 c3270.cursesColorForProtected:	cyan
 c3270.cursesColorForProtectedIntensified:	white
+c3270.acs: true
 
 ! Use the keymaps defined above.
-c3270.keymap:	pc-numeric,curses-PAK,xterm-256color-PAK,vt100-PAK,insert,scroll,generic
+c3270.keymap:	curses-PAK,generic,insert,pc-keypad,scroll,vt100-PAK,xterm-256color-PAK,xterm-PFK
