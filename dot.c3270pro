@@ -29,14 +29,10 @@ c3270.keymap.generic:	\
 	Alt<Key>e:	EraseEOF()\n\
 	Alt<Key>f:	NextWord()\n\
 	Alt<Key>q:	Disconnect()\n\
-	Alt<Key>v:	insert-selection("PRIMARY")\n\
 	Alt<Key>w:	Disconnect()\n\
-	Alt<Key>x:	Cut("CLIPBOARD")\n\
 	Ctrl<Key>b:	PreviousWord()\n\
 	Ctrl<Key>d:	Disconnect()\n\
-	Ctrl<Key>f:	NextWord()\n\
-	Ctrl<Key>v:	insert-selection("PRIMARY")\n\
-	Ctrl<Key>x:	Cut("CLIPBOARD")
+	Ctrl<Key>f:	NextWord()
 
 ! The full Mac keyboard has "Help" where the PC key board has "Insert", and
 ! we use it as the latter. Set all Help key variations to toggle Insert on and
