@@ -83,8 +83,7 @@ x3270.keymap.pc-numeric:	\
 	<Key>KP_Decimal:	PF(23)\n\
 	<Key>KP_Enter:	PF(24)
 
-! Use the keymaps defined above; "not" make only work on US keyboards.
-
+! Use the keymaps defined above; note that "not" only works on US keyboards.
 x3270.keymap:	not,pc-PAK,mac-PAK,XF86keysym-PAK,pc-scroll,pc-numeric,insert,generic
 
 x3270.dsTrace:	false
@@ -94,3 +93,4 @@ x3270.keypadOn:	false
 x3270.lineWrap:	true
 x3270.scrollbar:	false
 x3270.showTiming:	false
+x3270.ftHost: vm

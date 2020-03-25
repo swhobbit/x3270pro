@@ -135,6 +135,9 @@ c3270.keymap.netbsd.console:	 \
 	Alt<Key>[ <Key>2 <Key>3 <Key>~:	PF(11)\n\
 	Alt<Key>[ <Key>2 <Key>4 <Key>~:	PF(12)
 
+! Use the keymaps defined above.
+c3270.keymap:	generic,insert,pc-keypad,vt100-PAK,xterm-256color-PAK,xterm-PFK,curses-PAK,scroll
+
 c3270.cursesColorForDefault:	green
 c3270.cursesColorForIntensified:	magenta
 c3270.cursesColorForProtected:	cyan
@@ -143,5 +146,4 @@ c3270.cursesColorForProtectedIntensified:	white
 ! Use ugly but always available ASCII characters for pop up keymap
 c3270.asciiBoxDraw: true
 
-! Use the keymaps defined above.
-c3270.keymap:	generic,insert,pc-keypad,vt100-PAK,xterm-256color-PAK,xterm-PFK,curses-PAK,scroll
+c3270.ftHost: vm
