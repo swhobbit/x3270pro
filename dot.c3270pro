@@ -100,8 +100,8 @@ c3270.keymap.vt100-PAK:	\
 ! above.
 
 c3270.keymap.pc-keypad:	\
-        Alt<Key>O <Key>w:	PF(13)\n\
-        Alt<Key>O <Key>x:	PF(14)\n\
+	Alt<Key>O <Key>w:	PF(13)\n\
+	Alt<Key>O <Key>x:	PF(14)\n\
 	Alt<Key>O <Key>y:	PF(15)\n\
 	Alt<Key>O <Key>t:	PF(16)\n\
 	Alt<Key>O <Key>u:	PF(17)\n\
