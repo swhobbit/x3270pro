@@ -23,16 +23,12 @@ c3270.keymap.generic:	\
 	<Key>BTAB:	BackTab()\n\
 	<Key>U+007F:	Erase\n\
 	Alt<Key>a:	Attn()\n\
-	Alt<Key>b:	PreviousWord()\n\
 	Alt<Key>c:	Clear()\n\
 	Alt<Key>d:	Disconnect()\n\
 	Alt<Key>e:	EraseEOF()\n\
-	Alt<Key>f:	NextWord()\n\
 	Alt<Key>q:	Disconnect()\n\
 	Alt<Key>w:	Disconnect()\n\
-	Ctrl<Key>b:	PreviousWord()\n\
-	Ctrl<Key>d:	Disconnect()\n\
-	Ctrl<Key>f:	NextWord()
+	Ctrl<Key>d:	Disconnect()
 
 ! The full Mac keyboard has "Help" where the PC key board has "Insert", and
 ! we use it as the latter. Set all Help key variations to toggle Insert on and

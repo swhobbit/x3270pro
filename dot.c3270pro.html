@@ -1,22 +1,21 @@
 <h1 id="dot-c3270pro-c3270pro-keymap-for-c3270-readme">dot.c3270pro (<code>.c3270pro</code>) keymap for <code>c3270</code> README</h1>
+<h2 id="before-we-begin">Before We Begin</h2>
+<p><strong>Note:</strong> When available, <code>x3270</code> gives a better user experience than <code>c3270</code>.  <code>c3270</code> is useful when <code>x3270</code> is not appropriate, for example when using for a long running system console under the program <code>screen</code>.</p>
 <h2 id="overview">Overview</h2>
-<p>The <a href="dot.c3270pro">dot.c3270pro</a> profile installed as <code>~/.c3270pro</code> configures the key mapping for <code>c3270</code> as used by the author (<a href="mailto:andrew.h@derbyshire.us">andrew.h@derbyshire.us</a>) to access VM and MVS.</p>
-<p><strong>Note:</strong> When available, <code>x3270</code> gives a better user experience than <code>c3270</code>.  <code>c3270</code> is useful when <code>x3270</code> is not appropriate, for example using for a long running system console under the program <code>screen</code>.</p>
-<p><strong>Note</strong>: The mouse is not supported in all environments.  The effectively disables the top of screen tabs.</p>
-<h2 id="c3270-sh-wrapper"><code>c3270.sh</code> Wrapper</h2>
-<p>Once opened in a terminal window, the <code>c3270</code> emulator size is both arbitrary and fixed; if wrong (too large), it cannot be changed without restarting the program. The fixed size is less of issue with <code>x3270</code> because it _does__ check the screen and generate a new window that fits. However, <code>c3270</code> does not check the terminal window size and simply generates a default terminal size (by default, 43 lines).</p>
-<p>The wrapper script <a href="c3270.sh">c3270.sh</a> checks the terminal size and invokes <code>c3270</code> with the largest 3270 model size appropriate for the window.</p>
-<p><strong>Note</strong>: When the terminal window is tall enough and at least 132 columns, <code>c3270.sh</code> will favor emulating a <a href="README.html#terminal-sizes">3270 model 5</a> over a taller but narrower terminal.</p>
-<p><strong><em>Note</em></strong>: When using <code>c3270</code>, make the terminal window two lines <em>higher</em> than the desired 3270 terminal size <em>before</em> running the program. This allows room for the top &amp; bottom lines of chrome.</p>
+<p>The <a href="dot.c3270pro">dot.c3270pro</a> profile when installed as <code>~/.c3270pro</code> configures the key mapping for <code>c3270</code> as used by the author to access VM and MVS.</p>
+<p><strong>Note</strong>: The mouse is not supported in all environments.  If the mouse not supported, this effectively disables the top of screen tabs.</p>
+<p><strong><em>Note</em></strong>: When using <code>c3270</code>, make the terminal window two lines <em>taller</em> than the desired 3270 terminal size <em>before</em> running the program. This allows room for the top &amp; bottom lines of chrome.</p>
 <h2 id="profile-overview">Profile overview</h2>
 <p>The profile when adds, tweaks, and in some cases out-and-out corrects various items in the default setup.  Below is the primary layout by the author with alternative key mappings.</p>
+<p><strong>Note</strong>: All Keypad keys may require <code>NUMLOCK</code> to be engaged.</p>
+<p><strong>Note</strong>: <code>Print Screen</code>, <code>Scroll Lock</code>, and <code>Pause</code> may not work on Windows systems.</p>
 <h2 id="special-emulator-keys">Special Emulator Keys</h2>
 <table>
 <thead>
 <tr>
 <th>3270 Key</th>
 <th>Emulator Key</th>
-<th>Emulator Alternatives</th>
+<th>Alternative Emulator Key(s)</th>
 <th>Notes</th>
 </tr>
 </thead>
@@ -43,7 +42,7 @@
 <tr>
 <th>3270 Key</th>
 <th>Emulator Key</th>
-<th>Emulator Alternatives</th>
+<th>Alternative Emulator Key(s)</th>
 <th>Notes</th>
 </tr>
 </thead>
@@ -61,26 +60,21 @@
 <td>Alt-A</td>
 </tr>
 <tr>
-<td></td>
-</tr>
-<tr>
 <td><code>PA1</code></td>
 <td>F13 (aka <code>Print Screen</code>)</td>
-<td>Alt-1</td>
+<td>Ctrl-a 1<br>Keypad -</td>
+<td>Keypad - may return <code>PF4</code> under some emulators such as <code>PuTTY</code></td>
 </tr>
 <tr>
 <td><code>PA2</code></td>
 <td>F14 (aka <code>Scroll Lock</code>)</td>
-<td>Alt-2</td>
-<td>PA2 clears the screen on the virtual console when not in full screen mode (such as the editor).</td>
+<td>Ctrl-a 2<br>Keypad +</td>
+<td>On VM, PA2 clears the screen on the virtual console when not in full screen mode (such as the editor).</td>
 </tr>
 <tr>
 <td><code>PA3</code></td>
-<td>F13 (aka <code>Pause</code>)</td>
-<td>Alt-3</td>
-</tr>
-<tr>
-<td></td>
+<td>F15 (aka <code>Pause</code>)</td>
+<td>Ctrl-a 3</td>
 </tr>
 <tr>
 <td><code>PF1</code></td>
@@ -132,6 +126,66 @@
 <td><code>PF12</code></td>
 <td>F12</td>
 </tr>
+<tr>
+<td><code>PF13</code></td>
+<td>Keypad 7</td>
+<td>Ctrl-a F1</td>
+</tr>
+<tr>
+<td><code>PF14</code></td>
+<td>Keypad 8</td>
+<td>Ctrl-a F2</td>
+</tr>
+<tr>
+<td><code>PF15</code></td>
+<td>Keypad 9</td>
+<td>Ctrl-a F3</td>
+</tr>
+<tr>
+<td><code>PF16</code></td>
+<td>Keypad 4</td>
+<td>Ctrl-a F4</td>
+</tr>
+<tr>
+<td><code>PF17</code></td>
+<td>Keypad 5</td>
+<td>Ctrl-a F5</td>
+</tr>
+<tr>
+<td><code>PF18</code></td>
+<td>Keypad 6</td>
+<td>Ctrl-a F6</td>
+</tr>
+<tr>
+<td><code>PF19</code></td>
+<td>Keypad 1</td>
+<td>Ctrl-a F7</td>
+</tr>
+<tr>
+<td><code>PF20</code></td>
+<td>Keypad 2</td>
+<td>Ctrl-a F8</td>
+</tr>
+<tr>
+<td><code>PF21</code></td>
+<td>Keypad 3</td>
+<td>Ctrl-a F9</td>
+</tr>
+<tr>
+<td><code>PF22</code></td>
+<td>Keypad 0</td>
+<td>Ctrl-a F10</td>
+</tr>
+<tr>
+<td><code>PF23</code></td>
+<td>Keypad . (period)</td>
+<td>Ctrl-a F11</td>
+</tr>
+<tr>
+<td><code>PF24</code></td>
+<td>Keypad Enter</td>
+<td>Ctrl-a F12</td>
+</tr>
 </tbody>
 </table>
 <hr>
@@ -141,7 +195,7 @@
 <tr>
 <th>Function</th>
 <th>Emulator Key</th>
-<th>Emulator Alternatives</th>
+<th>Alternative Emulator Key(s)</th>
 <th>Notes</th>
 </tr>
 </thead>
@@ -157,11 +211,6 @@
 <td>MacOS has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270, hence the modifier keys. As configured, <code>Insert</code> function actually toggles insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off.</td>
 </tr>
 <tr>
-<td><code>Client Paste</code></td>
-<td>Alt-V</td>
-<td>Shift-Insert, Mouse Button 2 (middle)</td>
-</tr>
-<tr>
 <td><code>Delete Word</code></td>
 <td>Shift-Delete</td>
 <td><code>Delete Word</code> deletes to the <em>left</em>.  Attempts to housebreak it and have it delete to the right have failed</td>
@@ -173,17 +222,14 @@
 <tr>
 <td><code>Word Right</code></td>
 <td>Alt-Right Arrow</td>
-<td>Alt-Right Arrow</td>
 </tr>
 <tr>
 <td><code>Word Left</code></td>
-<td>Alt-Left Arrow</td>
-<td>Alt-Left Arrow</td>
+<td>Alt-Left Arrow    w</td>
 </tr>
 <tr>
 <td><code>Erase EOF</code></td>
-<td></td>
-<td></td>
+<td>Alt-e</td>
 <td>Pop up key pad only. When in an unprotected field, <code>Erase EOF</code> erases from the cursor to the end of the field)</td>
 </tr>
 <tr>
@@ -199,10 +245,16 @@
 </tr>
 <tr>
 <td><code>Newline</code></td>
-<td></td>
-<td></td>
-<td>Pop-up Keypad</td>
+<td>Ctrl-j</td>
+<td>First unprotected characterr of of the next line.</td>
 </tr>
 </tbody>
 </table>
 <hr>
+<h2 id="screen-size-warning">Screen Size Warning</h2>
+<p>Once opened in a terminal window, the size of the <code>c3270</code> logical screen cannot be changed.  (Changing the terminal window itself is operating system dependant, of course.) If wrong (too large or small), the <code>c3270</code> logical screen cannot be changed without restarting the program.</p>
+<h2 id="c3270-sh-wrapper"><code>c3270.sh</code> Wrapper</h2>
+<p>Use of this script is generally optional.</p>
+<p> The wrapper script <a href="c3270.sh">c3270.sh</a> checks the terminal size and invokes <code>c3270</code> with the largest 3270 model size appropriate for the window, overriding <code>~/.c3270pro</code> if needed.</p>
+<p><strong>Note</strong>: While the <code>c3270</code> module will  by default generate the correct screen, it will set the <em>model</em> to <a href="./README.html#terminal-sizes">3270 model 4</a>.  This will affect programs which check the model rather than screen size.  (Checking the actual screen size was not possible until VM/SP 4.) </p>
+<p><strong>Note</strong>: When the terminal window is tall enough and with enough, <code>c3270.sh</code> will favor emulating a <a href="./README.html#terminal-sizes">3270 model 5</a> over a taller but narrower terminal.</p>
