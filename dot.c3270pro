@@ -140,5 +140,8 @@ c3270.cursesColorForIntensified:	magenta
 c3270.cursesColorForProtected:	cyan
 c3270.cursesColorForProtectedIntensified:	white
 
+! Use ugly but always available ASCII characters for pop up keymap
+c3270.asciiBoxDraw: true
+
 ! Use the keymaps defined above.
 c3270.keymap:	generic,insert,pc-keypad,vt100-PAK,xterm-256color-PAK,xterm-PFK,curses-PAK,scroll
