@@ -5,12 +5,11 @@
 !         Date: 19 Mar 2020 (revised and documented)
 !       Author: ahd@kew.com (Drew Derbyshire)
 !      Address: Kendra Electronic Wonderworks
-!	        Kenmore, WA
+!               Kenmore, WA
 
-! The generic map provides a not sign (¬) in place of the caret, and
-! keys for functions like client-side editing and program control.
-! The map overrides the compiled in base keymap in the following
-! cases:
+! The generic map provides keys for functions like client-side
+! editing and program control. The map overrides the compiled in base
+! keymap in the following cases:
 !
 ! * NPAGE (scroll client forward) and PPAGE (scroll client previous)
 !   are more useful to tell the host the standard PF keys for forward
