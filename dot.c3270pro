@@ -17,17 +17,22 @@
 ! * Ctrl-D (FieldMark) Dup and Ctrl-F (FieldMark) are two functions
 !   I never used during 16 years of daily 3270 work. The keys are
 !   better suited for Disconnect and NextWord
+!
+! Alt U+00D is Alt-ENTER, but c3270 doesn't let us call it that.
+! U+007F is the ANSI DELETE character, not to be confused with the DELETE
+! key (under INSERT/Help)
 
 c3270.keymap.generic:	\
 	<Key>BTAB:	BackTab()\n\
 	<Key>U+007F:	Erase\n\
+	Alt<Key>U+000D:	Newline()\n\
 	Alt<Key>a:	Attn()\n\
 	Alt<Key>c:	Clear()\n\
 	Alt<Key>d:	Disconnect()\n\
+	Ctrl<Key>d:	Disconnect()\n\
 	Alt<Key>e:	EraseEOF()\n\
 	Alt<Key>q:	Disconnect()\n\
-	Alt<Key>w:	Disconnect()\n\
-	Ctrl<Key>d:	Disconnect()
+	Alt<Key>w:	Disconnect()
 
 ! The full Mac keyboard has "Help" where the PC key board has "Insert", and
 ! we use it as the latter. Set all Help key variations to toggle Insert on and
