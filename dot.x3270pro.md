@@ -28,11 +28,11 @@ These keys all generate an interrupt to the host.
 |	`Enter`		|	Return		|
 |	`Clear`		|	Alt-C	        |	Meta-C	|
 |	`Attn`		|	Alt-A	        |	Meta-A	|
-|
+| |
 |	`PA1`		|	F13 (aka `Print Screen`)	|	Meta-1, Keypad-Divide (aka keypad "/")	|
 |	`PA2`		|	F14 (aka `Scroll Lock`)	|	Meta-2, Keypad-Multiply (aka keypad "*")	|
 |	`PA3`		|	F13 (aka `Pause`)|	Meta-3		|
-|
+| |
 |	`PF1`		|	F1		|
 |	`PF2`		|	F2		|
 |	`PF3`		|	F3		|
@@ -45,7 +45,7 @@ These keys all generate an interrupt to the host.
 |	`PF10`		|	F10		|
 |	`PF11`		|	F11		|
 |	`PF12`		|	F12		|
-|
+||
 |	`PF13`		|	Shift-F1	|	Keypad-7	|
 |	`PF14`		|	Shift-F2	|	Keypad-8	|
 |	`PF15`		|	Shift-F3	|	Keypad-9	|
@@ -58,7 +58,7 @@ These keys all generate an interrupt to the host.
 |	`PF22`		|	Shift-F10	|	Keypad-0	|
 |	`PF23`		|	Shift-F11	|	Keypad-Decimal (AKA keypad "`.`")	|
 |	`PF24`		|	Shift-F12	|	Keypad-Enter, Keypad-Plus (AKA keypad "`+`")	|
----
+||
 
 ### Important Client keys / functions
 
@@ -76,6 +76,4 @@ These keys all generate an interrupt to the host.
 |	`Paste`	|	Meta-V		|	Shift-Insert, Mouse Button 3 (middle button)	| Pasting a long strings or multiple lines into formatted fields may have undesirable results.
 |	`Reset`		|	Meta-R		|	Ctrl-R	|
 |	`Newline`	|	Shift-Return	|
-----
-
-**Note**: 
+||
