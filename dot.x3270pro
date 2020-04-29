@@ -10,14 +10,21 @@ x3270.keymap.generic:	#override \
 	Alt<Key>Right:	NextWord()\n\
 	Shift<Key>Tab:	BackTab()\n\
 	Meta<Key>v:	insert-selection("PRIMARY")\n\
-	Meta<Key>x:	Cut("CLIPBOARD")
+	Meta<Key>x:	Cut("CLIPBOARD")\n\
+	Alt<Key>F4:	Disconnect()\n\
+	Meta<Key>F4:	Disconnect()\n\
+	Meta<Key>w:	Disconnect()
 
 ! The full Mac keyboard has "Help" where the PC key board has "Insert", and
 ! we use it as the latter.  Set all Help key variations (and the PC Insert key)
 ! to toggle Insert on and off, as opposed to the real hardware which turns ON
 ! Insert with the key but turns it OFF via the reset key.
 !
-! Note: The bare Help key is eaten on by MacOS, hence the modified versions.
+! Note: The bare Help key is eaten on by MacOS if enable_key_equivalents
+! thus enabling the Insert ! is true, hence the modified versions.
+! You disable this for ALL X applications at once via the X11 Preferences
+! or via the command:
+! 	defaults write org.macosforge.xquartz.X11 enable_key_equivalents -boolean false
 !
 ! Due to search order, shifted keys must be first!
 
