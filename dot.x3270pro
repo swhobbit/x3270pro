@@ -12,7 +12,6 @@ x3270.keymap.generic:	#override \
 	Meta<Key>v:	insert-selection("PRIMARY")\n\
 	Meta<Key>x:	Cut("CLIPBOARD")\n\
 	Alt<Key>F4:	Disconnect()\n\
-	Meta<Key>F4:	Disconnect()\n\
 	Meta<Key>w:	Disconnect()
 
 ! The full Mac keyboard has "Help" where the PC key board has "Insert", and
@@ -93,11 +92,20 @@ x3270.keymap.pc-numeric:	\
 ! Use the keymaps defined above; note that "not" only works on US keyboards.
 x3270.keymap:	not,pc-PAK,mac-PAK,XF86keysym-PAK,pc-scroll,pc-numeric,insert,generic
 
-x3270.dsTrace:	false
+# The author of this file is not young and thus likes a large display font
 x3270.emulatorFont:	3270-20
-x3270.extended:	true
-x3270.keypadOn:	false
-x3270.lineWrap:	true
-x3270.scrollbar:	false
-x3270.showTiming:	false
-x3270.ftHost: vm
+
+# The author of this file uses VM more than the default, TSO.
+x3270.ftHost:	vm
+
+# In x3270 v3, one has to turn scrollbar on to see the OIA column/row
+# under XQuartz.
+#
+# In x3270 v4, The xQuartz hack truncates and shifts the column/row
+# in the OIA line out from under the MacOS XQuartz resize icon, making
+# it readable with the scroll bar off. (This is also useful on other
+# systems like Linux when the terminal is remotely displayed via
+# XQuartz.)
+
+x3270.scrollBar:	false
+x3270.xQuartzHack:	true
