@@ -66,7 +66,7 @@ These keys all generate an interrupt to the host.
 |	-------------	|	------------	|	---------------------	| ----
 |	`Logical Not (¬)`	|	Caret (`^`)	|
 |       `Copy`		|	Drag-Mouse	|	|
-|	`Insert`	|	Insert		|	Alt-Insert, Meta-Insert, Ctrl-Insert	|	MacOS has a `Help` key instead of `Insert`; the unmodified key cannot be read by x3270, hence the modifier key alternatives are provided. The `Insert` function actually toggles insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses `Insert` to turn on insert and `Reset` to turn it off.
+|	`Insert`	|	Insert		|	Alt-Insert, Meta-Insert, Ctrl-Insert	|	MacOS has a `Help` key instead of `Insert`; the unmodified key cannot be read by x3270 unless "Enable key equivalents" is disabled in XQuartz. Hence, the modifier key alternatives are provided. The `Insert` function is configured to toggle insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses `Insert` to turn on insert and `Reset` to turn it off.
 |	`Delete Word`	|	Shift-Delete	|	|	`Delete Word` deletes the word to the *left*.  Attempts to housebreak it and have it delete to the right have failed.	|
 |	`Delete Field`	|	Control-U	|
 |	`Word Right`	|	Meta-Right Arrow	|	Alt-Right Arrow	|
