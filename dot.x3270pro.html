@@ -1,19 +1,29 @@
-<h1 id="dot-x3270pro-x3270pro-keymap-for-x3270-readme">dot.x3270pro (<code>.x3270pro</code>) keymap for <code>x3270</code> README</h1>
-<h2 id="overview">Overview</h2>
-<p>The <a href="dot.x3270pro">dot.x3270pro</a> profile when installed as <code>~/.x3270pro</code> configures key mapping for <code>x3270</code> as used by the author (<a href="mailto:andrew.h@derbyshire.us">andrew.h@derbyshire.us</a>) to access VM. </p>
+<h1 id="dot.x3270pro%20(%3Ccode%3E.x3270pro%3C/code%3E)%20keymap%20for%20%3Ccode%3Ex3270%3C/code%3E%20README">dot.x3270pro (<code>.x3270pro</code>) keymap for <code>x3270</code> README</h1>
+
+<h2 id="Overview">Overview</h2>
+
+<p>The <a href="dot.x3270pro">dot.x3270pro</a> profile when installed as <code>~/.x3270pro</code> configures key mapping for <code>x3270</code> as used by the author (andre<a href="mailto:andrew.h@derbyshire.us">andrew.h@derbyshire.us</a>) to access VM. </p>
+
 <p>The profile adds, tweaks, and in some cases out-and-out corrects various items in the setup for x3270 keys. </p>
-<h2 id="installing-x3270">Installing x3270</h2>
+
+<h2 id="Installing%20x3270">Installing x3270</h2>
+
 <p>See <a href="README#get-3270">README</a>.</p>
-<h2 id="x3270-sh-wrapper"><code>x3270.sh</code> wrapper</h2>
-<p>In some X Windows environments, multiple <code>x3270</code> will land on in the same position and hide each other. The (x3270.sh)[x3270.sh] script does two things:</p>
-<ul>
-<li>It randomizes the position of the <code>x3270</code> windows on the screen.</li>
-<li>It adds the to <code>x3270</code> <code>-once</code> option  to automatically close the window after session termination.</li>
-</ul>
-<h2 id="profile-keys">Profile keys</h2>
+
+<h2 id="%3Ccode%3Ex3270.sh%3C/code%3E%20wrapper"><code>x3270.sh</code> wrapper</h2>
+
+<p>In some X Windows environments, multiple <code>x3270</code> will land on in the same position and hide each other. The (x3270.sh)[x3270.sh] script does two things:
+* It randomizes the position of the <code>x3270</code> windows on the screen.
+* It adds the to <code>x3270</code> <code>-once</code> option  to automatically close the window after session termination.</p>
+
+<h2 id="Profile%20keys">Profile keys</h2>
+
 <p>Below is the primary layout by the author with alternative key bindings.</p>
-<h3 id="program-attention-keys-pak-">Program Attention Keys (PAK)</h3>
+
+<h3 id="Program%20Attention%20Keys%20(PAK)">Program Attention Keys (PAK)</h3>
+
 <p>These keys all generate an interrupt to the host.</p>
+
 <table>
 <thead>
 <tr>
@@ -23,185 +33,251 @@
 <th>Notes</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td><code>Enter</code></td>
 <td>Return</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>Clear</code></td>
 <td>Alt-C</td>
 <td>Meta-C</td>
+<td></td>
 </tr>
 <tr>
 <td><code>Attn</code></td>
 <td>Alt-A</td>
 <td>Meta-A</td>
+<td></td>
 </tr>
 <tr>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td><code>PA1</code></td>
 <td>F13 (aka <code>Print Screen</code>)</td>
-<td>Meta-1, Keypad-Divide (aka keypad &quot;/&quot;)</td>
+<td>Meta-1, Keypad-Divide (aka keypad &ldquo;/&rdquo;)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PA2</code></td>
 <td>F14 (aka <code>Scroll Lock</code>)</td>
-<td>Meta-2, Keypad-Multiply (aka keypad &quot;*&quot;)</td>
+<td>Meta-2, Keypad-Multiply (aka keypad &ldquo;*&rdquo;)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PA3</code></td>
 <td>F13 (aka <code>Pause</code>)</td>
 <td>Meta-3</td>
+<td></td>
 </tr>
 <tr>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td><code>PF1</code></td>
 <td>F1</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF2</code></td>
 <td>F2</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF3</code></td>
 <td>F3</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF4</code></td>
 <td>F4</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF5</code></td>
 <td>F5</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF6</code></td>
 <td>F6</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF7</code></td>
 <td>F7</td>
 <td>Page Up</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF8</code></td>
 <td>F8</td>
 <td>Page Down</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF9</code></td>
 <td>F9</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF10</code></td>
 <td>F10</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF11</code></td>
 <td>F11</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF12</code></td>
 <td>F12</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td><code>PF13</code></td>
 <td>Shift-F1</td>
 <td>Keypad-7</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF14</code></td>
 <td>Shift-F2</td>
 <td>Keypad-8</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF15</code></td>
 <td>Shift-F3</td>
 <td>Keypad-9</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF16</code></td>
 <td>Shift-F4</td>
 <td>Keypad-4</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF17</code></td>
 <td>Shift-F5</td>
 <td>Keypad-5</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF18</code></td>
 <td>Shift-F6</td>
 <td>Keypad-6</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF19</code></td>
 <td>Shift-F7</td>
 <td>Keypad-1</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF20</code></td>
 <td>Shift-F8</td>
 <td>Keypad-2</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF21</code></td>
 <td>Shift-F9</td>
 <td>Keypad-3</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF22</code></td>
 <td>Shift-F10</td>
 <td>Keypad-0</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF23</code></td>
 <td>Shift-F11</td>
-<td>Keypad-Decimal (AKA keypad &quot;<code>.</code>&quot;)</td>
+<td>Keypad-Decimal (AKA keypad &ldquo;<code>.</code>&rdquo;)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>PF24</code></td>
 <td>Shift-F12</td>
-<td>Keypad-Enter, Keypad-Plus (AKA keypad &quot;<code>+</code>&quot;)</td>
+<td>Keypad-Enter, Keypad-Plus (AKA keypad &ldquo;<code>+</code>&rdquo;)</td>
+<td></td>
 </tr>
 <tr>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="important-client-keys-functions">Important Client keys / functions</h3>
+
+<h3 id="Important%20Client%20keys%20/%20functions">Important Client keys / functions</h3>
+
 <table>
 <thead>
 <tr>
 <th>Function</th>
 <th>Emulator Key</th>
 <th>Emulator Alternatives</th>
-<th>Notes </th>
+<th>Notes</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td><code>Logical Not (¬)</code></td>
 <td>Caret (<code>^</code>)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>US Cent Sign (¢)</code></td>
+<td>Alt-4</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>Copy</code></td>
 <td>Drag-Mouse</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td><code>Insert</code></td>
 <td>Insert</td>
 <td>Alt-Insert, Meta-Insert, Ctrl-Insert</td>
-<td>MacOS has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270 unless &quot;Enable key equivalents&quot; is disabled in XQuartz. Hence, the modifier key alternatives are provided.<br><br><strong>Note:</strong> The <code>Insert</code> function is configured to toggle insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off.</td>
+<td>MacOS has a <code>Help</code> key instead of <code>Insert</code>; the unmodified key cannot be read by x3270 unless &ldquo;Enable key equivalents&rdquo; is disabled in XQuartz. Hence, the modifier key alternatives are provided.  <br><br> <strong>Note:</strong> The <code>Insert</code> function is configured to toggle insert mode on/off, which is the typical action on a modern desktop system. A true 3270 keyboard uses <code>Insert</code> to turn on insert and <code>Reset</code> to turn it off.</td>
 </tr>
 <tr>
 <td><code>Delete Word</code></td>
@@ -212,16 +288,20 @@
 <tr>
 <td><code>Delete Field</code></td>
 <td>Control-U</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>Word Right</code></td>
 <td>Meta-Right Arrow</td>
 <td>Alt-Right Arrow</td>
+<td></td>
 </tr>
 <tr>
 <td><code>Word Left</code></td>
 <td>Meta-Left Arrow</td>
 <td>Alt-Left Arrow</td>
+<td></td>
 </tr>
 <tr>
 <td><code>Erase EOF</code></td>
@@ -245,12 +325,18 @@
 <td><code>Reset</code></td>
 <td>Meta-R</td>
 <td>Ctrl-R</td>
+<td></td>
 </tr>
 <tr>
 <td><code>Newline</code></td>
 <td>Shift-Return</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 </tbody>

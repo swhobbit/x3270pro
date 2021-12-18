@@ -1,7 +1,7 @@
 
 ! Due to search order, shifted keys must be first!
 
-x3270.keymap.generic:	#override \
+x3270.keymap.generic:	\
 	Shift<Key>Delete:	DeleteWord()\n\
 	<Key>Delete:	Delete()\n\
 	Shift<Key>End:	EraseEOF()\n\
@@ -89,23 +89,75 @@ x3270.keymap.pc-numeric:	\
 	<Key>KP_Decimal:	PF(23)\n\
 	<Key>KP_Enter:	PF(24)
 
+! Make ALT-4 cent sign
+x3270.keymap.cent-sign: Alt<KeyPress>4: Key(U+00a2)
+
+! Map evil keys (accidententally hit) to something safer; you WON'T
+! want this (you want the default mapping) if using Hebrew or Arabic.
+
+x3270.keymap.disable-evil:	\
+	Alt<Key>v:	ignore()\n\
+	Alt<Key>f:	ignore()
+
 ! Use the keymaps defined above; note that "not" only works on US keyboards.
-x3270.keymap:	not,pc-PAK,mac-PAK,XF86keysym-PAK,pc-scroll,pc-numeric,insert,generic
 
-# The author of this file is not young and thus likes a large display font
-x3270.emulatorFont:	3270-20
+x3270.keymap:	not,pc-PAK,mac-PAK,XF86keysym-PAK,pc-scroll,pc-numeric,insert,cent-sign,generic,disable-evil
 
-# The author of this file uses VM more than the default, TSO.
+! The author of this file is not young and thus likes a large display font
+
+x3270.emulatorFont:	3270gt24
+
+! The author of this file uses VM more than the default, TSO.
+
 x3270.ftHost:	vm
 
-# In x3270 v3, one has to turn scrollbar on to see the OIA column/row
-# under XQuartz.
-#
-# In x3270 v4, The xQuartz hack truncates and shifts the column/row
-# in the OIA line out from under the MacOS XQuartz resize icon, making
-# it readable with the scroll bar off. (This is also useful on other
-# systems like Linux when the terminal is remotely displayed via
-# XQuartz.)
+! In x3270 v3, one has to turn scrollbar on to see the OIA column/row
+! under XQuartz (MacOS).
+!
+! In x3270 v4, The xQuartz hack truncates and shifts the column/row
+! in the OIA line out from under the MacOS XQuartz resize icon, making
+! it readable with the scroll bar off. (This is also useful on other
+! systems like Linux when the terminal is remotely displayed via
+! XQuartz.)
 
 x3270.scrollBar:	false
 x3270.xQuartzHack:	true
+
+! Put ibm_hosts in the home directory where it doesn't require root
+! to update it.
+
+x3270.hostsFile: ~/.ibm_hosts
+
+! Xquartz under MacOS using black border around x3270's black
+! emulator windows background, which means windows run into each
+! other. Experiment with lighter background to make edges of emulator
+! windows visible.
+! 
+! Best ignored for now.
+
+!x3270.colorScheme:	bg
+
+x3270.colorScheme.bg:	\
+	darkslategrey	\
+	blue	\
+	red	\
+	pink	\
+	green	\
+	turquoise	\
+	yellow	\
+	white	\
+	black	\
+	darkblue	\
+	orange	\
+	purple	\
+	palegreen	\
+	paleturquoise	\
+	grey	\
+	white	\
+	forestgreen	\
+	darkslategrey	\
+	steelblue	\
+	green	\
+	red	\
+	cyan	\
+	white
