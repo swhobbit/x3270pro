@@ -4,7 +4,7 @@
 
 This repository exists to provide an example of key mapping for `x3270` and `c3270` as used by the author (andrew.h@derbyshire.us) to access VM.
 
-***Note:*** Do not use `tn3270`.  It is older and does not handle all data streams from modern IBM mainframes properly.
+***Note:*** Do not use the program `tn3270`.  It is older and does not handle all data streams from modern IBM mainframes properly.
 
 ### Terminal Sizes
 
@@ -32,7 +32,7 @@ The standard terminal sizes for 3270 emulation are:
 
 `sudo apt-get install -y`
 * `3270-common`
-* `c3270`_
+* _`c3270`_
 * `fonts-3270`
 * _`pr3287`_
 * _`s3270`_
