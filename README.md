@@ -36,9 +36,9 @@ The standard terminal sizes for 3270 emulation are:
 * `fonts-3270`
 * _`pr3287`_
 * _`s3270`_
-* x3270
-* x3270-doc
-* `fonts-x3270-misc
+* `x3270`
+* `x3270-doc`
+* `fonts-x3270-misc`
 
 __Note:__ _Italicized_ items are optional.
 
