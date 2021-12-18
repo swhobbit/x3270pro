@@ -1,8 +1,11 @@
-# Read me file for x3270 repository
+Title: README file for x3270pro repository
+
+# README file for x3270pro repository
 
 ## Overview
 
-This repository exists to provide an example of key mapping for `x3270` and `c3270` as used by the author (andrew.h@derbyshire.us) to access VM.
+This repository exists to provide an example of key mapping for `x3270` and `c3270`
+as used by the author ([andrew.h@derbyshire.us](mailto:andrew.h@derbyshire.us)) to access VM.
 
 ***Note:*** Do not use the program `tn3270`.  It is older and does not handle all data streams from modern IBM mainframes properly.
 
@@ -21,9 +24,9 @@ The standard terminal sizes for 3270 emulation are:
 
 ### MacOS
 
-1. Install XQuartz https://www.xquartz.org/
-1. Install xcode: https://developer.apple.com/xcode/downloads/
-1. Install MacPorts: https://www.macports.org/
+1. Install XQuartz <https://www.xquartz.org/>
+1. Install xcode: <https://developer.apple.com/xcode/downloads/>
+1. Install MacPorts: <https://www.macports.org/>
 1. Install packages:
    * `sudo port install x3270`
    * `sudo port install c3270`
@@ -31,6 +34,7 @@ The standard terminal sizes for 3270 emulation are:
 ### Linux (ubuntu)
 
 `sudo apt-get install -y`
+
 * `3270-common`
 * _`c3270`_
 * `fonts-3270`
@@ -57,20 +61,21 @@ As of this writing, `c3270` is not available as a NetBSD port, and must be built
 1. Configure the Package system:
 1. Install `gmake`:
    * `pkg_add gmake`
-1. Fetch the suite3270 source and build it:
-   * Check http://x3270.bgp.nu/download.html  for the latest version.  
+1. Fetch the `suite3270` source and build it:
+   * Check <http://x3270.bgp.nu/download.html>  for the latest version.  
      (The following assumes (version 3.6ga8).
-   * `ftp http://x3270.bgp.nu/download/03.06/suite3270-3.6ga8-src.tgz`
+   * `ftp` <http://x3270.bgp.nu/download/03.06/suite3270-3.6ga8-src.tgz>
    * `tar zxf suite3270-3.6ga8-src.tgz`
    * `cd suite3270-3.6/`
    * `./configure --enable-c3270`
    * `gmake`
- 1. Using `su` or `sudo`:
+1. Using `su` or `sudo`:
     * `gmake install install.man`
 
 ### Installing `wc3270` on Windows
 
-If you must run from a console Window, download from http://x3270.bgp.nu/download.html and install:
+If you must run from a console Window, download from <http://x3270.bgp.nu/download.html> and install:
+
 * `wc3270`
 
 ***NOTE***: If running Windows 10 and it is otherwise possible, use the Windows Subsystem for Linux to install and run the `x3270` version.  The native Windows version is a console application, and more limited in functionality.

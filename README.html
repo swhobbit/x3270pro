@@ -1,9 +1,26 @@
-<h1 id="read-me-file-for-x3270-repository">Read me file for x3270 repository</h1>
-<h2 id="overview">Overview</h2>
-<p>This repository exists to provide an example of key mapping for <code>x3270</code> and <code>c3270</code> as used by the author (<a href="mailto:andrew.h@derbyshire.us">andrew.h@derbyshire.us</a>) to access VM.</p>
-<p><strong><em>Note:</em></strong> Do not use <code>tn3270</code>.  It is older and does not handle all data streams from modern IBM mainframes properly.</p>
-<h3 id="terminal-sizes">Terminal Sizes</h3>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="style.css" />
+<title>README file for x3270pro repository</title>
+</head>
+<body>
+
+<h1 id="README%20file%20for%20x3270pro%20repository">README file for x3270pro repository</h1>
+
+<h2 id="Overview">Overview</h2>
+
+<p>This repository exists to provide an example of key mapping for <code>x3270</code> and <code>c3270</code>
+as used by the author (<a href="mailto:andrew.h@derbyshire.us">andrew.h@derbyshire.us</a>) to access VM.</p>
+
+<p><strong><em>Note:</em></strong> Do not use the program <code>tn3270</code>.  It is older and does not handle all data streams from modern IBM mainframes properly.</p>
+
+<h3 id="Terminal%20Sizes">Terminal Sizes</h3>
+
 <p>The standard terminal sizes for 3270 emulation are:</p>
+
 <table>
 <thead>
 <tr>
@@ -12,6 +29,7 @@
 <th>Columns</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>2</td>
@@ -35,71 +53,102 @@
 </tr>
 </tbody>
 </table>
-<h2 id="installing-x3270-c3270">Installing <code>x3270</code> / <code>c3270</code></h2>
-<h3 id="macos">MacOS</h3>
+
+<h2 id="Installing%20%3Ccode%3Ex3270%3C/code%3E%20/%20%3Ccode%3Ec3270%3C/code%3E">Installing <code>x3270</code> / <code>c3270</code></h2>
+
+<h3 id="MacOS">MacOS</h3>
+
 <ol>
 <li>Install XQuartz <a href="https://www.xquartz.org/">https://www.xquartz.org/</a></li>
 <li>Install xcode: <a href="https://developer.apple.com/xcode/downloads/">https://developer.apple.com/xcode/downloads/</a></li>
 <li>Install MacPorts: <a href="https://www.macports.org/">https://www.macports.org/</a></li>
-<li>Install packages:<ul>
+<li>Install packages:
+
+<ul>
 <li><code>sudo port install x3270</code></li>
 <li><code>sudo port install c3270</code></li>
-</ul>
-</li>
+</ul></li>
 </ol>
-<h3 id="linux-ubuntu-">Linux (ubuntu)</h3>
+
+<h3 id="Linux%20(ubuntu)">Linux (ubuntu)</h3>
+
 <p><code>sudo apt-get install -y</code></p>
+
 <ul>
 <li><code>3270-common</code></li>
-<li><code>c3270</code>_</li>
+<li><em><code>c3270</code></em></li>
 <li><code>fonts-3270</code></li>
 <li><em><code>pr3287</code></em></li>
 <li><em><code>s3270</code></em></li>
-<li>x3270</li>
-<li>x3270-doc</li>
-<li>`fonts-x3270-misc</li>
+<li><code>x3270</code></li>
+<li><code>x3270-doc</code></li>
+<li><code>fonts-x3270-misc</code></li>
 </ul>
+
 <p><strong>Note:</strong> <em>Italicized</em> items are optional.</p>
-<h3 id="netbsd">NetBSD</h3>
-<h4 id="x3270"><code>x3270</code></h4>
+
+<h3 id="NetBSD">NetBSD</h3>
+
+<h4 id="%3Ccode%3Ex3270%3C/code%3E"><code>x3270</code></h4>
+
 <ol>
 <li>To install <code>x3270</code>, first configure the Package system:</li>
-<li>Using <code>su</code> or <code>sudo</code>:<ul>
+<li>Using <code>su</code> or <code>sudo</code>:
+
+<ul>
 <li><code>pkg_add x3270</code></li>
-</ul>
-</li>
+</ul></li>
 </ol>
-<h4 id="c3270"><code>c3270</code></h4>
+
+<h4 id="%3Ccode%3Ec3270%3C/code%3E"><code>c3270</code></h4>
+
 <p>As of this writing, <code>c3270</code> is not available as a NetBSD port, and must be built by hand.</p>
+
 <ol>
 <li>Configure the Package system:</li>
-<li>Install <code>gmake</code>:<ul>
+<li>Install <code>gmake</code>:
+
+<ul>
 <li><code>pkg_add gmake</code></li>
-</ul>
-</li>
-<li>Fetch the suite3270 source and build it:<ul>
-<li>Check <a href="http://x3270.bgp.nu/download.html">http://x3270.bgp.nu/download.html</a>  for the latest version.<br>(The following assumes (version 3.6ga8).</li>
-<li><code>ftp http://x3270.bgp.nu/download/03.06/suite3270-3.6ga8-src.tgz</code></li>
+</ul></li>
+<li>Fetch the <code>suite3270</code> source and build it:
+
+<ul>
+<li>Check <a href="http://x3270.bgp.nu/download.html">http://x3270.bgp.nu/download.html</a>  for the latest version.<br/>
+(The following assumes (version 3.6ga8).</li>
+<li><code>ftp</code> <a href="http://x3270.bgp.nu/download/03.06/suite3270-3.6ga8-src.tgz">http://x3270.bgp.nu/download/03.06/suite3270-3.6ga8-src.tgz</a></li>
 <li><code>tar zxf suite3270-3.6ga8-src.tgz</code></li>
 <li><code>cd suite3270-3.6/</code></li>
 <li><code>./configure --enable-c3270</code></li>
 <li><code>gmake</code></li>
-<li>Using <code>su</code> or <code>sudo</code>:<ul>
+</ul></li>
+<li>Using <code>su</code> or <code>sudo</code>:
+
+<ul>
 <li><code>gmake install install.man</code></li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
 </ol>
-<h3 id="installing-wc3270-on-windows">Installing <code>wc3270</code> on Windows</h3>
+
+<h3 id="Installing%20%3Ccode%3Ewc3270%3C/code%3E%20on%20Windows">Installing <code>wc3270</code> on Windows</h3>
+
 <p>If you must run from a console Window, download from <a href="http://x3270.bgp.nu/download.html">http://x3270.bgp.nu/download.html</a> and install:</p>
+
 <ul>
 <li><code>wc3270</code></li>
 </ul>
+
 <p><strong><em>NOTE</em></strong>: If running Windows 10 and it is otherwise possible, use the Windows Subsystem for Linux to install and run the <code>x3270</code> version.  The native Windows version is a console application, and more limited in functionality.</p>
-<h2 id="using-under-x-windows-via-x3270-">Using Under X Windows (via <code>x3270</code>)</h2>
+
+<h2 id="Using%20Under%20X%20Windows%20(via%20%3Ccode%3Ex3270%3C/code%3E)">Using Under X Windows (via <code>x3270</code>)</h2>
+
 <p>See the <a href="dot.x3270pro.html">dot.x3270pro documentation</a> file.</p>
-<h2 id="using-in-a-terminal-window-via-c3270-">Using in a terminal Window (via <code>c3270</code>)</h2>
+
+<h2 id="Using%20in%20a%20terminal%20Window%20(via%20%3Ccode%3Ec3270%3C/code%3E)">Using in a terminal Window (via <code>c3270</code>)</h2>
+
 <p>See the <a href="dot.c3270pro.html">dot.c3270pro documentation</a> file.</p>
-<h2 id="using-on-a-windows-via-wc3270-">Using on a Windows (via <code>wc3270</code>)</h2>
+
+<h2 id="Using%20on%20a%20Windows%20(via%20%3Ccode%3Ewc3270%3C/code%3E)">Using on a Windows (via <code>wc3270</code>)</h2>
+
 <p>This section to <em>To Be Determined</em>.</p>
+</body>
+</html>

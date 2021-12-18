@@ -1,6 +1,6 @@
-# vim: expandtab ts=8
+# vim:	expandtab ts=8
 
-all:  \
+all:	 \
 	c3270.sh  \
 	x3270.sh  \
 	dot.c3270pro  \
@@ -9,14 +9,24 @@ all:  \
 	dot.c3270pro.html  \
 	dot.x3270pro.html
 
-%.html: %.md
-	sed -e 's/\.md/\.html/' $^ | lowdown --html-no-num-ent --html-no-owasp --html-no-escapehtml --html-no-skiph -T html -o $@
+%.html:	%.md
+	sed -e 's/\.md/\.html/' $^ 	\
+		| lowdown \
+				-s	\
+				-m css:style.css	\
+				--html-no-num-ent	\
+				--html-no-owasp	\
+				--html-no-escapehtml	\
+				--html-no-skiph	\
+				-T html	\
+				-o $@
+%.html:	Makefile
 
-dot%: ${HOME}/%
+dot%:	${HOME}/%
 	cp -p $^ $@
 
-%.sh: ${HOME}/bin/%.sh
+%.sh:	${HOME}/bin/%.sh
 	cp -p $^ $@
 
 clean:
-	- rm README.html
+	- rm *.html

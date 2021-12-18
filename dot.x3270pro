@@ -10,9 +10,12 @@ x3270.keymap.generic:	\
 	Alt<Key>Right:	NextWord()\n\
 	Shift<Key>Tab:	BackTab()\n\
 	Meta<Key>v:	insert-selection("PRIMARY")\n\
+	Super<Key>v:	insert-selection("PRIMARY")\n\
 	Meta<Key>x:	Cut("CLIPBOARD")\n\
+	Super<Key>x:	Cut("CLIPBOARD")\n\
 	Alt<Key>F4:	Disconnect()\n\
 	Meta<Key>w:	Disconnect()
+	Super<Key>w:	Disconnect()
 
 ! The full Mac keyboard has "Help" where the PC key board has "Insert", and
 ! we use it as the latter.  Set all Help key variations (and the PC Insert key)
@@ -105,14 +108,14 @@ x3270.keymap:	not,pc-PAK,mac-PAK,XF86keysym-PAK,pc-scroll,pc-numeric,insert,cent
 
 ! The author of this file is not young and thus likes a large display font
 
-x3270.emulatorFont:	3270gt24
+x3270.emulatorFont:	3270-20
 
 ! The author of this file uses VM more than the default, TSO.
 
 x3270.ftHost:	vm
 
 ! In x3270 v3, one has to turn scrollbar on to see the OIA column/row
-! under XQuartz (MacOS).
+! under XQuartz.
 !
 ! In x3270 v4, The xQuartz hack truncates and shifts the column/row
 ! in the OIA line out from under the MacOS XQuartz resize icon, making
@@ -123,10 +126,12 @@ x3270.ftHost:	vm
 x3270.scrollBar:	false
 x3270.xQuartzHack:	true
 
-! Put ibm_hosts in the home directory where it doesn't require root
+! Put ibm_hpsts in the home directory where it doesn't require root
 ! to update it.
 
 x3270.hostsFile: ~/.ibm_hosts
+
+
 
 ! Xquartz under MacOS using black border around x3270's black
 ! emulator windows background, which means windows run into each
@@ -135,7 +140,38 @@ x3270.hostsFile: ~/.ibm_hosts
 ! 
 ! Best ignored for now.
 
-!x3270.colorScheme:	bg
+! x3270.colorScheme:	bg
+
+x3270.colorScheme.standard:	\
+	black	\
+	blue	\
+	red	\
+	pink	\
+	green	\
+	turquoise	\
+	yellow	\
+	white	\
+	black	\
+	darkblue	\
+	orange	\
+	purple	\
+	palegreen	\
+	paleturquoise	\
+	grey	\
+	white	\
+	white	\
+	black	\
+	yellow	\
+	green	\
+	red	\
+	blue	\
+	white
+
+
+
+
+
+
 
 x3270.colorScheme.bg:	\
 	darkslategrey	\

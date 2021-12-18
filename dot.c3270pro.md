@@ -1,4 +1,6 @@
-# dot.c3270pro (`.c3270pro`) keymap for `c3270` README
+Title: README for dot.c3270pro keymap used with c3270
+
+# README for dot.c3270pro (`.c3270pro`) keymap used with `c3270` 
 
 ## Before We Begin
 
@@ -38,11 +40,9 @@ These keys all generate an interrupt to the host.
 |	`Enter`	|	**Enter**	|	|	Main keyboard **ENTER**, not the keypad **ENTER**	|
 |	`Clear`	|	Alt-c	|	Ctrl-c	|
 |	`Attn`	|	Alt-a	|	Ctrl-c
-||
 |	`PA1`	|	Ctrl-a 1	|	F13 (or **Print&nbsp;Screen**),<br>Keypad -	| **Keypad -** may return `PF4` under some emulators such as `PuTTY`
 |	`PA2`	|	Ctrl-a 2	|	F14 (or **Scroll&nbsp;Lock**),<br>Keypad +	|	On VM systems, `PA2` clears output area of the screen on the virtual console when not in full screen mode (such as the editor) without clearing user input.
 |	`PA3`	|	Ctrl-a 3	|	F15 (or **Pause**)	|	
-| |
 |	`PF1`	|	F1	|
 |	`PF2`	|	F2	|
 |	`PF3`	|	F3	|
@@ -55,7 +55,6 @@ These keys all generate an interrupt to the host.
 |	`PF10`	|	F10	|
 |	`PF11`	|	F11	|
 |	`PF12`	|	F12	|
-| |
 |	`PF13`	|	Ctrl-a F1	|	Keypad 7	|
 |	`PF14`	|	Ctrl-a F2	|	Keypad 8	|
 |	`PF15`	|	Ctrl-a F3	|	Keypad 9	|
@@ -82,7 +81,7 @@ These keys all generate an interrupt to the host.
 |	`Reset`	|	Alt-r	|	Ctrl-r	|	Unlocks keyboard (if locked), and turns off insert (if enabled). |
 |	`Refresh`	|	Ctrl-l	|	| 	Redraw the Screen	|
 |	`Newline`	|	Ctrl-j	|	Alt-**Enter**	|	First unprotected character of the next line. |
-| |
+
 ## Screen Size Warning
 
 Once opened in a terminal window, the size of the `c3270` logical screen cannot be changed. (Changing the terminal window itself is operating system dependant, of course.) If wrong (too large or small), the `c3270` logical screen cannot be changed without restarting the program.

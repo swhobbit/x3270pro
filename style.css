@@ -1,0 +1,41 @@
+/* --------------------------------------------------------------- */
+/*    Standard style sheet for Kendra Electronic Wonderworks       */
+/*    web pages.                                                   */
+/*                                                                 */
+/*    Copyright 1998 by Kendra Electronic Wonderworks, all         */
+/*    rights reserved.                                             */
+/* --------------------------------------------------------------- */
+
+   STRONG { color: red; }
+   BODY {
+                color:  navy;
+                background-color: #f2f2f2;
+                margin: 1% 8%;
+                padding: 1% 4%;
+        }
+   H1   {
+                text-align: center;
+                color: DarkSlateGray;
+        }
+   H2, H3, H3, H4, H5, H6
+        {
+                color: black;
+        }
+   pre  {
+                font-family: "courier",
+                             "serif" ;
+        }
+   code {
+                color: green;
+        }
+    div.outer {
+    }
+    div.inner {
+    }
+
+    th, td, table {
+        border-collapse: collapse;
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+    }
