@@ -10,7 +10,7 @@ all:  \
 	dot.x3270pro.html
 
 %.html: %.md
-	sed -e 's/\.md/\.html/' $^ | marked --output $@
+	sed -e 's/\.md/\.html/' $^ | lowdown --html-no-num-ent --html-no-owasp --html-no-escapehtml --html-no-skiph -T html -o $@
 
 dot%: ${HOME}/%
 	cp -p $^ $@
