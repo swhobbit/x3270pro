@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ $# -lt 1 ] ; then
-  name=`basename $0`
+  name=$(basename $0)
   echo ${name} requires arguments for c3270, such as:
   echo ''
   echo "     " ${name} -secure tty.livingcomputers.org 24
@@ -19,8 +19,8 @@ if [ -z "${TERM}" ] ; then
   exit 88
 fi
 
-lines=`tput lines`
-cols=`tput cols`                  # tput columns should work but doesn't
+lines=$(tput lines)
+cols=$(tput cols)                  # tput columns should work but doesn't
 
 if [ ${lines:?"ERROR: Cannot determine number of lines on terminal"} -ge 26 -a  \
     ${cols:?"ERROR: Cannot determine number of columns on terminal"} -ge 132 ] ; then
