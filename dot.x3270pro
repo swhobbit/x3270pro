@@ -95,7 +95,7 @@ x3270.keymap.pc-numeric:	\
 ! Make ALT-4 cent sign
 x3270.keymap.cent-sign: Alt<KeyPress>4: Key(U+00a2)
 
-! Map evil keys (accidententally hit) to something safer; you WON'T
+! Map evil keys (accidentally hit) to something safer; you WON'T
 ! want this (you want the default mapping) if using Hebrew or Arabic.
 
 x3270.keymap.disable-evil:	\
@@ -109,6 +109,7 @@ x3270.keymap:	not,pc-PAK,mac-PAK,XF86keysym-PAK,pc-scroll,pc-numeric,insert,cent
 ! The author of this file is not young and thus likes a large display font
 
 x3270.emulatorFont:	3270-20
+! x3270.emulatorFont:	-b&h-lucidatypewriter-medium-r-normal-sans-18-180-75-75-m-110-iso10646-1
 
 ! The author of this file uses VM more than the default, TSO.
 
@@ -137,7 +138,7 @@ x3270.hostsFile: ~/.ibm_hosts
 ! emulator windows background, which means windows run into each
 ! other. Experiment with lighter background to make edges of emulator
 ! windows visible.
-! 
+!
 ! Best ignored for now.
 
 ! x3270.colorScheme:	bg
