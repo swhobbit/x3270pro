@@ -151,3 +151,8 @@ c3270.cursesColorForProtectedIntensified:	white
 c3270.asciiBoxDraw: true
 
 c3270.ftHost: vm
+
+! Put ibm_hpsts in the home directory where it doesn't require root
+! to update it.
+
+c3270.hostsFile: ~/.ibm_hosts
