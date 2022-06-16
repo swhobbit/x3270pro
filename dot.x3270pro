@@ -1,4 +1,3 @@
-
 ! Due to search order, shifted keys must be first!
 
 x3270.keymap.generic:	\
@@ -16,7 +15,7 @@ x3270.keymap.generic:	\
 	Alt<Key>F4:	Disconnect()\n\
 	Meta<Key>w:	Disconnect()
 	Super<Key>w:	Disconnect()
-
+!
 ! The full Mac keyboard has "Help" where the PC key board has "Insert", and
 ! we use it as the latter.  Set all Help key variations (and the PC Insert key)
 ! to toggle Insert on and off, as opposed to the real hardware which turns ON
@@ -29,6 +28,7 @@ x3270.keymap.generic:	\
 ! 	defaults write org.macosforge.xquartz.X11 enable_key_equivalents -boolean false
 !
 ! Due to search order, shifted keys must be first!
+!
 
 x3270.keymap.insert:	\
 	Meta<Key>Help:	ToggleInsert()\n\
@@ -37,8 +37,10 @@ x3270.keymap.insert:	\
 	<Key>Help:	ToggleInsert()\n\
 	<Key>Insert:	ToggleInsert()
 
+!
 ! Make page up/down the standard PF keys for up (PF7) & down (PF8)
 ! Due to search order, shifted keys must be first!
+!
 
 x3270.keymap.pc-scroll:	\
 	Shift<Key>Prior:	PF(19)\n\
@@ -68,12 +70,15 @@ x3270.keymap.pc-PAK:	\
 	<Key>Pause:	PA(3)
 
 ! The keys on a Apple Mac compatible keyboard to the right of F12.
+
 x3270.keymap.mac-PAK:	\
 	<Key>F13:	PA(1)\n\
 	<Key>F14:	PA(2)\n\
 	<Key>F15:	PA(3)
 
+!
 ! Make the PC keypad act as PA1-PA3 & PF13-PF24
+!
 
 x3270.keymap.pc-numeric:	\
 	<Key>KP_Divide:	PA(1)\n\
@@ -93,6 +98,7 @@ x3270.keymap.pc-numeric:	\
 	<Key>KP_Enter:	PF(24)
 
 ! Make ALT-4 cent sign
+
 x3270.keymap.cent-sign: Alt<KeyPress>4: Key(U+00a2)
 
 ! Map evil keys (accidentally hit) to something safer; you WON'T
@@ -132,69 +138,59 @@ x3270.xQuartzHack:	true
 
 x3270.hostsFile: ~/.ibm_hosts
 
-
-
-! Xquartz under MacOS using black border around x3270's black
-! emulator windows background, which means windows run into each
-! other. Experiment with lighter background to make edges of emulator
-! windows visible.
 !
-! Best ignored for now.
+! Xquartz under MacOS uses a black border around x3270's black
+! emulator windows background, which means windows run into each
+! other. gray10 creates subtle difference from black which delineates
+! windows borders but is not intrusive.
+!
 
-! x3270.colorScheme:	bg
+x3270.colorScheme:	kew
 
-x3270.colorScheme.standard:	\
-	black	\
-	blue	\
-	red	\
-	pink	\
-	green	\
-	turquoise	\
-	yellow	\
-	white	\
-	black	\
-	darkblue	\
-	orange	\
-	purple	\
-	palegreen	\
-	paleturquoise	\
-	grey	\
-	white	\
-	white	\
-	black	\
-	yellow	\
-	green	\
-	red	\
-	blue	\
-	white
+x3270.schemeList:       Kendra Electronic Wonderworks: kew\n\
+			Wiki Default: wikidefault\n\
+			Wonderworks Green Screen: kewGreenScreen\n\
+			Wonderworks Simple: kewSimple\n\
+			Default 3279: default\n\
+                        Bright: bright\n\
+                        Reverse: reverse\n\
+                        Green Screen: greenScreen
 
+x3270.colorScheme.kew: \
+       gray10 DodgerBlue red hotpink \
+       limegreen turquoise yellow white \
+       gray10 blue3 orange purple \
+       paleGreen paleTurquoise2 grey white \
+       white gray10 dimGrey \
+       4 2 1 15
 
+! Not really default (see the source), but example from
+! https://x3270.mirheze.org/wiki/ColorScheme_resource
 
+x3270.colorScheme.wikidefault: \
+       black deepSkyBlue red pink \
+       green turquoise yellow white \
+       black blue3 orange purple \
+       paleGreen paleTurquoise2 grey white \
+       white black dimGrey \
+       4 2 1 15
 
+x3270.colorScheme.kewGreenScreen: \
+        Green3 Green3 Green3 green \
+        Green3 Green3 Green3 green \
+        Green3 Green3 Green3 Green3 \
+        Green3 Green3 Green3 green \
+        white gray10 dimGrey \
+        4 15 4 15
 
+!
+! Demonstration scheme using the colors defined by simple(r) color names
+!
 
-
-x3270.colorScheme.bg:	\
-	darkslategrey	\
-	blue	\
-	red	\
-	pink	\
-	green	\
-	turquoise	\
-	yellow	\
-	white	\
-	black	\
-	darkblue	\
-	orange	\
-	purple	\
-	palegreen	\
-	paleturquoise	\
-	grey	\
-	white	\
-	forestgreen	\
-	darkslategrey	\
-	steelblue	\
-	green	\
-	red	\
-	cyan	\
-	white
+x3270.colorScheme.kewSimple:	\
+	black	blue		red	 pink \
+	green	turquoise	yellow	white	\
+	black	darkblue	orange	purple	\
+	palegreen paleturquoise	grey	white	\
+	white	black	yellow	\
+	4 15 4 15
